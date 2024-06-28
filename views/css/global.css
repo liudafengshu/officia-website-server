@@ -5,6 +5,12 @@ html {
     font-size: 0.052vw;
 }
 
+/* @media (max-width:1024px) {
+    html {
+        font-size: 0.13vw;
+    }
+} */
+
 body {
     margin: 0;
     line-height: 1.1;

@@ -36,9 +36,11 @@
     position: relative;
 }
 
+
 .site_page .AboutHeroBx-preserve .AboutHeroBx-item {
     position: absolute;
 }
+
 
 .hover_line {
     display: flex;
