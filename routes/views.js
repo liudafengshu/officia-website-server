@@ -24,5 +24,8 @@ router
   })
   .get("/contact", async (req, res) => {
     res.render("contact.ejs");
+  })
+  .get("/liaison", async (req, res) => {
+    res.render("liaison.ejs");
   });
 module.exports = router;
