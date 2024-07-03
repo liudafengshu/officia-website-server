@@ -1,0 +1,102 @@
+.present {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+
+.present_background {
+    height: 953rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000;
+}
+
+.present_principal {
+    font-size: 48rem;
+    font-weight: 400;
+    line-height: 72rem;
+    text-align: center;
+    margin-top: 90rem;
+    color: #fff;
+    width: 1310rem;
+}
+
+.present_img {
+    width: 1726rem;
+    /* height: 792rem; */
+    border-radius: 10rem 0rem 0rem 0rem;
+    margin-top: 80rem;
+    position: relative;
+    filter: grayscale(1);
+}
+
+/* .img_grayscale {
+    background-color: #000;
+    position: absolute;
+    opacity: 0.2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+} */
+
+.detailed_introduction {
+    padding: 100rem 138rem;
+    width: 1380rem;
+    font-size: 38rem;
+    line-height: 53.2rem;
+    position: relative;
+    border-bottom: 1rem solid #ccc;
+
+}
+
+.detailed_introduction_quotation_mark {
+    position: absolute;
+    left: 50rem;
+    top: 75rem;
+    width: 72rem;
+    height: 168rem;
+    opacity: 0.1;
+    font-size: 120rem;
+    font-weight: 400;
+    line-height: 168rem;
+    text-align: justified;
+    color: #000;
+
+
+}
+
+.companion {
+    margin-top: 140rem;
+}
+
+.companion_title {
+    font-size: 48rem;
+    font-weight: 400;
+    line-height: 72rem;
+    text-align: center;
+    margin-bottom: 80rem;
+
+}
+
+.companion_list {
+    padding: 0 100rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50rem;
+}
+
+.companion_item {
+    width: 191rem;
+    height: 117rem;
+}
+
+.companion_line {
+    margin: 140rem auto 0;
+    width: 1360rem;
+    border: 1rem solid #ccc;
+}

@@ -20,7 +20,12 @@ router
     res.render("case-detail.ejs", data);
   })
   .get("/service", async (req, res) => {
-    // const data = await viewController.caseDetail(req.params);
-    res.render("service.ejs", data);
+    res.render("service.ejs");
+  })
+  .get("/contact", async (req, res) => {
+    res.render("contact.ejs");
+  })
+  .get("/liaison", async (req, res) => {
+    res.render("liaison.ejs");
   });
 module.exports = router;

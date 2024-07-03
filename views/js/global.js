@@ -18,7 +18,7 @@ innerloader = {
           //   $(".innerload").css("opacity", 0);
           //   // $("html").scrollTop(4);
           // }, 600);
-        }, 2000);
+        }, 0);
       }
     }
     a();

@@ -37,13 +37,13 @@
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200rem) {
     :root {
         --container-padding: 6vw;
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 540rem) {
 
     :root {
         --color-border: rgba(28, 29, 32, 0.225);
@@ -101,8 +101,8 @@
 }
 
 .btn-normal .btn-click {
-    -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border);
-    box-shadow: inset 0px 0px 0px 1px var(--color-border);
+    -webkit-box-shadow: inset 0rem 0rem 0rem 1rem var(--color-border);
+    box-shadow: inset 0rem 0rem 0rem 1rem var(--color-border);
 }
 
 .btn-fill {
@@ -124,14 +124,14 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 20rem;
     z-index: 2;
     color: #fff;
     position: relative;
     transform: rotate(0.001deg);
     pointer-events: none;
     will-change: transform, color;
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: 200;
     text-align: left;
 
@@ -185,8 +185,8 @@
 /* --- Button Normal - Theme Dark --- */
 
 .theme-dark .btn-normal .btn-click {
-    -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border-light);
-    box-shadow: inset 0px 0px 0px 1px var(--color-border-light);
+    -webkit-box-shadow: inset 0rem 0rem 0rem 1rem var(--color-border-light);
+    box-shadow: inset 0rem 0rem 0rem 1rem var(--color-border-light);
 }
 
 .theme-dark .btn-normal .btn-text .btn-text-inner {
@@ -196,8 +196,8 @@
 /* --- Button Normal - Dark --- */
 
 .btn-normal.btn-dark .btn-click {
-    -webkit-box-shadow: inset 0px 0px 0px 0px var(--color-border);
-    box-shadow: inset 0px 0px 0px 0px var(--color-border);
+    -webkit-box-shadow: inset 0rem 0rem 0rem 0rem var(--color-border);
+    box-shadow: inset 0rem 0rem 0rem 0rem var(--color-border);
     background: var(--color-dark);
 }
 
@@ -230,8 +230,8 @@
     bottom: -.5em;
     left: 50%;
     display: block;
-    width: calc(clamp(16px, 1.2vw, 19px) / 2.75);
-    height: calc(clamp(16px, 1.2vw, 19px) / 2.75);
+    width: calc(clamp(16rem, 1.2vw, 19rem) / 2.75);
+    height: calc(clamp(16rem, 1.2vw, 19rem) / 2.75);
     border-radius: 50%;
     background: var(--color-dark);
     transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
@@ -285,7 +285,7 @@
 .btn-link.btn-link-external .btn-click::after {
     bottom: 0;
     width: 100%;
-    height: 1px;
+    height: 1rem;
     border-radius: 0;
     background: var(--color-dark);
     transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
@@ -337,7 +337,7 @@
 
 .color2 .btn-click {
     background: #ff0000;
-    /* box-shadow: 0 0 5px #ff0000; */
+    /* box-shadow: 0 0 5rem #ff0000; */
 }
 
 /* --- Button Circle - Theme Dark --- */
@@ -350,7 +350,7 @@
     background: var(--color-blue-dark);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024rem) {
     .footer {
         overflow: hidden;
     }
@@ -365,7 +365,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: 1px solid #000;
+        border: 1rem solid #000;
     }
 
     .footer .sj_side .circle {
@@ -392,7 +392,7 @@
         width: 56.26666666666667vw;
         height: 22vw;
         border-radius: 26.66666666666667vw;
-        border: 1px solid #000;
+        border: 1rem solid #000;
         background: #FFF;
         display: flex;
         align-items: center;
@@ -420,14 +420,14 @@
     }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720rem) {
     :root {
         --section-padding: 12vh;
     }
 
     .btn-round .btn-click {
-        width: 216px;
-        height: 216px;
+        width: 216rem;
+        height: 216rem;
     }
 
 }
