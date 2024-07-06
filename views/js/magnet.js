@@ -74,7 +74,7 @@ function initMagneticButtons() {
     if ($(this).find(".btn-text-inner.change2").length) {
       gsap.to($(this).find(".btn-text-inner.change2"), 0.3, {
         startAt: { color: "#000" },
-        color: "#C9FF85",
+        color: "#F04444",
         ease: Power3.easeIn,
       });
     }

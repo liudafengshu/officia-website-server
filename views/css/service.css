@@ -2,24 +2,44 @@
     /* padding: 0vh 5vw; */
 }
 
-.site_page {
-    padding: 90rem 160rem 100rem;
+.site_page .page-container {
+    padding: 0rem 160rem;
     display: flex;
-    height: 750rem;
+    /* height: 750rem; */
+    width: 100%;
 }
 
 .site_page .left_text {
     width: 710rem;
-    padding-top: 60rem;
+    padding-top: 250px;
     margin-right: 270rem;
 }
+
+
 
 .site_page .left_text h2 {
     margin: 0;
     font-size: 88rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 122rem;
     text-align: left;
+}
+
+.site_page .left_text h2 p {
+    display: inline-block;
+    position: relative;
+    font-weight: inherit;
+}
+
+.site_page .left_text h2 p::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 40%;
+    background-color: #FF2222;
+    position: absolute;
+    z-index: -1;
+    bottom: 10px;
 }
 
 .site_page .left_text span {
@@ -28,16 +48,187 @@
     font-weight: 400;
     line-height: 24rem;
     text-align: left;
+    display: block;
 
 }
 
-.site_page .AboutHeroBx-preserve {
+
+.AboutRedesign {
+    margin-top: -15rem;
+    width: 100%;
+    /* position: relative; */
+}
+
+.AboutRedesignBx {
+    /* position: relative; */
+    padding-top: 160px;
+}
+
+.AboutRedesignBx-preserve {
+    height: 100vh;
+    position: relative;
+}
+
+.AboutRedesignBx-item {
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    perspective: 125rem;
+}
+
+.AboutRedesignBx-item.card .AboutRedesignBx-img {
+    /* height: 72%; */
+}
+
+.AboutRedesignBx-item.card {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+    z-index: 2;
+}
+
+.AboutRedesignBx-card {
+    height: 50vh;
+}
+
+.AboutRedesignBx-item.first {
+    z-index: 3;
+}
+
+.AboutRedesignBx-item.center {
+    z-index: 2;
+}
+
+.AboutRedesignBx-img {
+    position: relative;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    transform: matrix(0.91, -0.41, 0, 1, 0, 0);
+    border-radius: 8px;
+}
+
+.AboutRedesignBxCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AboutRedesignBx-item.first {
+    transform: translate(0%, -60%);
+}
+
+.AboutRedesignBx-item.center {
+    transform: translate(-50%, -70%);
+}
+
+.AboutRedesignBx-item.last {
+    transform: translate(-100%, -80%);
+}
+
+@media screen and (max-width: 1024px) and (min-width: 748px) {
+    .AboutRedesign {
+        margin-top: -10rem;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 1px) {
+    .AboutRedesign {
+        margin-top: -10rem;
+    }
+}
+
+
+/*=========================================================
+	CardText
+=========================================================*/
+.CardText {
+    position: absolute;
+    display: flex;
+    top: 71%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    width: 100%;
+    /* height: 100vh; */
+    /* padding-left: 710rem; */
+}
+
+
+
+
+.CardText-item {
+    position: absolute;
+    top: 60%;
+    /* transform: translateX(-50%); */
+    right: 24px;
+
+}
+
+.CardText-text {
+    position: absolute;
+    padding-left: 2rem;
+    text-transform: uppercase;
+    left: 114%;
+    top: 57%;
+    z-index: 1;
+}
+
+.CardText-text:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    position: absolute;
+    left: -56px;
+    z-index: 9;
+    top: calc(50% - 4px);
+}
+
+.CardText-num {
+    width: 50px;
+    height: 2px;
+    display: block;
+    background-color: #ff0000;
+    position: absolute;
+    top: 50%;
+    left: -65%;
+    transform: translateY(-50%);
+}
+
+/* Rectangle 180 */
+
+
+
+.CardText-title {
+    display: block;
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #000;
+    font-weight: 400;
+    white-space: nowrap;
+    /* font-family: 'FuturaBt'; */
+}
+
+/* .CardText-item:first-child {
+    left: 28%;
+    top: 9px;
+}
+
+.CardText-item:last-child {
+    left: 52%;
+    top: 121px;
+} */
+
+.site_page .AboutRedesignBx-preserve {
     width: 355rem;
     position: relative;
 }
 
 
-.site_page .AboutHeroBx-preserve .AboutHeroBx-item {
+.site_page .AboutRedesignBx-preserve .AboutRedesignBx-item {
     position: absolute;
 }
 
@@ -61,6 +252,12 @@
     animation-name: hover_line_animation;
     overflow: hidden;
     transition: all 1s
+}
+
+.hover_line .hover_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .hover_line:hover {
@@ -123,4 +320,126 @@
     text-align: center;
     line-height: 36rem;
     color: #fff;
+}
+
+
+@media (max-width: 1024px) {
+    .site_page .page-container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 15vw;
+        padding-bottom: 0;
+        /* height: 700vh;
+        padding: 90rem 160rem 600px; */
+    }
+
+    .site_page .left_text {
+        padding-top: 0;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .site_page .left_text h2 {
+        font-size: 40px;
+        line-height: 1.5;
+    }
+
+    .site_page .left_text span {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .AboutRedesignBx-preserve {
+        height: 60vh;
+    }
+
+    .hover_line .left_text .left_text_block h3 {
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+
+    .AboutRedesignBx-item {
+        top: 64%;
+    }
+
+    .hover_line .left_text {
+        margin: 100px 5%;
+        width: 100%;
+    }
+
+    .hover_line .left_text .left_text_block span {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 15px 0;
+    }
+
+    .hover_line .left_text .left_text_block .button span {
+        font-size: 14px;
+        padding: 5px 25px;
+        width: auto;
+        height: auto;
+        line-height: 1.3;
+        margin: 10px 0;
+    }
+
+    .hover_line .left_text .left_text_block h4 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 16px 0;
+    }
+
+}
+
+@media (max-width:900px) {
+    .site_page .page-container {
+        padding: 100px 5% 0;
+    }
+
+    .site_page .left_text h2 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .left_text {
+        padding-bottom: 50px;
+    }
+
+    .AboutRedesignBx-preserve {}
+
+    .CardText {
+        top: 71%;
+    }
+
+    .CardText-title {
+        right: 24px;
+    }
+
+    .AboutRedesignBx {
+        padding-top: 0;
+    }
+
+    .hover_line .left_text {
+        margin: 50px 5%;
+    }
+
+    .hover_line {
+        height: 400px;
+        color: #fff;
+    }
+
+    .hover_line .hover_img {
+        opacity: 1
+    }
+
+    .CardText-text {
+        left: 100%;
+        /* right: -44%; */
+    }
+}
+
+header {
+    width: 100%;
+    position: fixed !important;
 }

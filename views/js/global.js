@@ -14,11 +14,10 @@ innerloader = {
         }
         setTimeout(function () {
           $(".innerload").addClass("show");
-          // setTimeout(function () {
-          //   $(".innerload").css("opacity", 0);
-          //   // $("html").scrollTop(4);
-          // }, 600);
-        }, 0);
+          setTimeout(() => {
+            $(".innerload").css("z-index", -1);
+          }, 200);
+        }, 2000);
       }
     }
     a();
@@ -61,9 +60,14 @@ new WOW().init();
 window.onload = function () {
   innerloader.init();
   $(".nav-links a").each(function () {
-    console.log($(".nav-links a").attr("href"), location.pathname);
     if ($(this).attr("href") == location.pathname) {
       $(this).addClass("w--current").siblings().removeClass("w--current");
+    }
+  });
+
+  $(".phone_menu .links a").each(function () {
+    if ($(this).attr("href") == location.pathname) {
+      $(this).addClass("active").siblings().removeClass("active");
     }
   });
 };

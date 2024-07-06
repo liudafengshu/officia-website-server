@@ -33,7 +33,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 100
+    z-index: 10
 }
 
 .section1 .chose .item {
@@ -226,4 +226,82 @@
 
 .section2 .pagination a:not(:last-child) {
     margin: 0 2.08333vw 0 0
+}
+
+
+.section2 .cases a .text .tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+@media screen and (max-width: 1024px) {
+    .banner h1 {
+        font-size: 38px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+
+    .section1 .chose .item .d1 {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .section1 .chose .item .d2 {
+        font-size: 14px;
+    }
+
+    .section2 .cases a .text .p1 {
+        font-size: 20px;
+    }
+
+    .section2 .cases a .text .des {
+        font-size: 14px;
+    }
+
+    .section2 .more a {
+        font-size: 40px;
+        height: 50px;
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .section2 .more a .btn-text {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .banner .container {
+        flex-direction: column;
+    }
+
+    .banner-left {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .section1 .chose {
+        gap: 4%;
+    }
+
+    .section1 .chose .item {
+        width: 43%;
+        margin: 0;
+        ;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .section2 .cases {
+        flex-direction: column;
+    }
+
+    .section2 .cases a {
+        width: 100%;
+    }
 }

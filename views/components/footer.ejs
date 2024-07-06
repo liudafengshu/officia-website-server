@@ -97,7 +97,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bot-left">
-                Copyright @ 2024 Redesign Technology Co., LTD. All Rights Reserved.
+                Copyright @ <span class="current-year"></span> Redesign Technology Co., LTD. All Rights Reserved.
             </div>
 
             <div class="footer-bot-right">
@@ -120,3 +120,15 @@
 <!-- <script src="/js/swiper-bundle.min.js"></script> -->
 <script src="/js/magnet.js" defer></script>
 <script src="/js/wow.min.js"></script>
+
+<script>
+    // Get Current Year to Footer
+
+    function getCurrentYear() {
+        var d = new Date();
+        var n = d.getFullYear();
+        document.querySelector('.current-year').innerHTML = n;
+    }
+
+    getCurrentYear();
+</script>

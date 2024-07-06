@@ -5,8 +5,13 @@
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
     padding-left: 7.7vw;
+}
+
+.banner .container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .banner-text {
@@ -306,7 +311,9 @@
 }
 
 .section4 .cases a .text .tag {
-    display: flex
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
 }
 
 .section4 .cases a .text .tag p {
@@ -314,7 +321,6 @@
     padding: 4rem 34rem;
     background: #000;
     color: #fff;
-    margin: 0 10rem 0 0;
     line-height: 20rem;
     font-weight: 400;
 }
@@ -340,7 +346,8 @@
 }
 
 
-.black_section .container {
+.black_section {
+    background: rgb(23, 23, 23);
     /* width: calc(100% - 10em) */
 }
 
@@ -428,6 +435,10 @@ body .main-wrapper {
     width: 100%;
     display: inline;
     font-size: 1.8vw;
+}
+
+.is--white.manifesto_heading.split-lines.mobile {
+    display: none;
 }
 
 .is--white.manifesto_heading.split-lines p {
@@ -564,4 +575,236 @@ body .main-wrapper {
     padding-bottom: 0;
     width: 100%;
     will-change: transform;
+}
+
+@media screen and (max-width: 1024px) {
+    .section1-item .tags span {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .section1-item h4 {
+        font-size: 28px;
+    }
+
+    .section4 .cases a .text .p1 {
+        font-size: 20px;
+    }
+
+    .section4 .cases a .text .des {
+        font-size: 14px;
+    }
+
+    .section2 .ours {
+        font-size: 18px;
+    }
+
+    .section2 h2 {
+        font-size: 18px;
+    }
+
+    .section4 .more a {
+        font-size: 40px;
+        height: 50px;
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .section4 .more a .btn-text {
+        font-size: 16px;
+    }
+
+    .manifesto_description-wrap {
+        text-align: center;
+    }
+
+    .manifesto_description-wrap svg {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .banner {
+        padding-left: 0;
+    }
+
+    .banner .container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
+    .banner-text {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .banner-text .text-en {
+        font-size: 20px;
+    }
+
+    .banner-text h1 {
+        font-size: 50px;
+        line-height: 1.5;
+    }
+
+    .section1 {
+
+        flex-wrap: wrap;
+        margin: 70px 0;
+    }
+
+    .section1-item {
+        width: 50%;
+    }
+
+    .section1-item:last-child {
+        border-left: 0;
+
+    }
+
+    .section1-item:last-child::before {
+        display: none;
+    }
+
+    .section2 .content {
+        padding-left: 0;
+    }
+
+    .section3 {
+        margin: 70px 30px;
+    }
+
+    .section3 .r,
+    .section3 .l {
+        font-size: 30px;
+    }
+
+    .section3 .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section3::before {
+        width: 100%;
+        left: 0;
+    }
+
+    .container.is-manifesto {
+        flex-direction: column-reverse
+    }
+
+    .section.is-manifesto:after {
+        top: -70px;
+    }
+
+    .section.is-manifesto {
+        margin-top: 70px;
+    }
+
+    .container.is-manifesto {
+        padding-top: 70px;
+    }
+
+    .manifesto_text-wrap {
+        width: 100%;
+    }
+
+    .is--white.manifesto_heading.split-lines p {
+        font-size: 20px;
+    }
+
+    .is--white.manifesto_heading.split-lines .en {
+        font-size: 13px;
+    }
+
+    .is--white.manifesto_heading.split-lines.pc {
+        display: none;
+    }
+
+    .is--white.manifesto_heading.split-lines.mobile {
+        display: block;
+    }
+
+    .allItems {
+        flex-direction: column;
+    }
+
+    .section5 .allItems .item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .is--white.manifesto_heading.split-lines p {
+        font-size: 14px;
+    }
+
+    .is--white.manifesto_heading.split-lines .en {
+        font-size: 12px;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+    }
+
+    .btn-click.project-consult {
+        width: 80%;
+    }
+
+    .banner-text .text-en {
+        font-size: 18px;
+    }
+
+    .section1 {
+        flex-direction: column;
+    }
+
+    .section1-item {
+        width: 100%;
+        border-left: 0;
+    }
+
+    .section1-item::before {
+        display: none;
+    }
+
+    .section3 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        margin: 40px;
+    }
+
+    .section3 .circle .st {
+        font-size: 18px;
+    }
+
+    .section3 .circle .st p {
+        font-size: 16px;
+    }
+
+    .section4 .cases {
+        flex-direction: column;
+    }
+
+    .section4 .cases a {
+        width: 100%;
+    }
+
+    .section2 .content {
+        flex-direction: column;
+    }
+
+    .section2-img {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .section2 .content {
+        align-items: flex-start;
+    }
+
+
+
 }

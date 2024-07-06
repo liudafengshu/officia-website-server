@@ -14,56 +14,44 @@ const mkdir = promisify(fs.mkdir);
 const images = require("images");
 
 exports.postemail = async (req, res) => {
-  const { name, tel, email, company, productname, msg } = req.body;
-  if (!name) {
-    res.json({
-      code: 400,
-      message: "您的称呼是必填项！",
-    });
-  } else if (!tel) {
-    res.json({
-      code: 400,
-      message: "联系方式是必填项！",
-    });
-  } else {
-    try {
-      var transport = nodemailer.createTransport(
-        "smtps://fortunatt_gw88%40163.com:RJLLEJAIEVGGWXJQ@smtp.163.com"
-      );
-      var mailOptions = {
-        from: "fortunatt_gw88@163.com", //发件人
-        to: "service1@fortuantt.com,gw@fortunatt.com", //收件人，可以设置多个
-        subject: `意向咨询<${getCurrentTime().curTime}>`, //邮件主题
-        html: `<p>您的称呼: ${name}</p >
-               <p>联系方式: ${tel}</p >
-               ${email ? `<p>电子邮件: ${email}</p >` : ""}
-               ${company ? `<p>所在单位: ${company}</p >` : ""}
-               ${productname ? `<p>意向产品: ${productname}</p >` : ""}
-               ${msg ? `<p>您的需求: ${msg}</p >` : ""}
-              `,
-      };
+  try {
+    const { labels, content, list } = req.body;
+    console.log(labels, content, list);
+    var transport = nodemailer.createTransport(
+      "smtps://fortunatt_gw88%40163.com:RJLLEJAIEVGGWXJQ@smtp.163.com"
+    );
+    var html = "";
 
-      transport.sendMail(mailOptions, function (err, info) {
-        if (err) {
-          res.json({
-            code: 400,
-            message: err,
-          });
-          return console.log(err);
-        }
+    list.forEach((el) => {
+      html += `<p style="font-size: 18px"><strong >${labels[el]}</strong>: ${content[el]}</p >`;
+    });
+    var mailOptions = {
+      from: "fortunatt_gw88@163.com", //发件人
+      to: "georgiafab2369@gmail.com", //收件人，可以设置多个
+      subject: `联系我们<${getCurrentTime().curTime}>`, //邮件主题
+      html,
+    };
 
+    transport.sendMail(mailOptions, function (err, info) {
+      if (err) {
         res.json({
-          code: 200,
-          message: info.response,
+          code: 400,
+          message: err,
         });
-        console.log("Message sent: " + info.response);
-      });
-    } catch (error) {
+        return console.log(err);
+      }
+
       res.json({
-        code: 400,
-        message: error.message,
+        code: 200,
+        message: info.response,
       });
-    }
+      console.log("Message sent: " + info.response);
+    });
+  } catch (error) {
+    res.json({
+      code: 400,
+      message: error.message,
+    });
   }
 };
 

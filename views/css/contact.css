@@ -1,102 +1,171 @@
-.present {
+main {
+    padding-bottom: 100rem;
+}
+
+.liaison_head {
+    display: flex;
+    justify-content: space-between;
+    padding: 100rem 160rem 80rem;
+}
+
+.liaison_head_left {
+    /* position: relative; */
+}
+
+
+/* 复选框 */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    /*清除复选框默认样式*/
+    border: 1px solid #000;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-top: 0;
+    margin-right: 0 !important;
+    border-radius: 0;
+    transition: all 0.2s ease-in;
+}
+
+input[type="checkbox"]:checked {
+    border-width: 8px;
+}
+
+input {
+    outline: none;
+}
+
+
+.liaison_head_left .liaison_head_left_p1 {
+    display: inline-block;
+    font-size: 88rem;
+    font-weight: 400;
+    line-height: 123.2rem;
+    position: relative;
+}
+
+.liaison_head_left .liaison_head_left_p1::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    bottom: -10rem;
+    height: 50%;
+    width: 100%;
+    background-color: red;
+}
+
+.liaison_head_left .liaison_head_left_p2 {
+    margin-top: 20rem;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 25.2rem;
+    text-align: left;
+    color: #333;
+    opacity: 0.7;
+}
+
+.liaison_head_right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
+    align-items: end;
+}
+
+.liaison_head_right_p1 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 24.7rem;
+}
+
+.liaison_head_right_p2 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 38.42rem;
 
 }
 
-.present_background {
-    height: 953rem;
+.liaison_head_right_two_dimensional_barcode {
+    width: 120rem;
+    height: 120rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.liaison_head_right_two_dimensional_barcode img {
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-color: #000;
 }
 
-.present_principal {
-    font-size: 48rem;
+.button_group {}
+
+.button_group_title {
+    font-size: 18rem;
     font-weight: 400;
-    line-height: 72rem;
-    text-align: center;
-    margin-top: 90rem;
-    color: #fff;
-    width: 1310rem;
+    line-height: 19.8rem;
+    padding: 20rem 160rem;
 }
 
-.present_img {
-    width: 1726rem;
-    /* height: 792rem; */
-    border-radius: 10rem 0rem 0rem 0rem;
-    margin-top: 80rem;
-    position: relative;
-    filter: grayscale(1);
-}
-
-/* .img_grayscale {
-    background-color: #000;
-    position: absolute;
-    opacity: 0.2;
-    height: 100%;
-    width: 100%;
-    top: 0;
-} */
-
-.detailed_introduction {
-    padding: 100rem 138rem;
-    width: 1380rem;
-    font-size: 38rem;
-    line-height: 53.2rem;
-    position: relative;
-    border-bottom: 1rem solid #ccc;
-
-}
-
-.detailed_introduction_quotation_mark {
-    position: absolute;
-    left: 50rem;
-    top: 75rem;
-    width: 72rem;
-    height: 168rem;
-    opacity: 0.1;
-    font-size: 120rem;
-    font-weight: 400;
-    line-height: 168rem;
-    text-align: justified;
-    color: #000;
-
-
-}
-
-.companion {
-    margin-top: 140rem;
-}
-
-.companion_title {
-    font-size: 48rem;
-    font-weight: 400;
-    line-height: 72rem;
-    text-align: center;
-    margin-bottom: 80rem;
-
-}
-
-.companion_list {
-    padding: 0 100rem;
+.button_list {
+    padding: 30rem 160rem;
+    background: #D9D9D966;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 50rem;
+    gap: 20rem 50rem;
 }
 
-.companion_item {
-    width: 191rem;
-    height: 117rem;
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.companion_line {
-    margin: 140rem auto 0;
-    width: 1360rem;
-    border: 1rem solid #ccc;
+.customer_information {
+    padding-left: 160rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30rem 0;
+}
+
+.customer_information .input-item {
+    width: 33%;
+    position: relative;
+
+}
+
+.input-item input {
+    display: block;
+    width: 100%;
+    height: 54rem;
+    padding: 16px 24px;
+    color: #757575;
+}
+
+.customer_information .submit {
+    width: 100%;
+    height: 54rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 54rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+
+}
+
+.error {
+    color: #F04444;
+    position: absolute;
+    display: none;
+    bottom: -20px;
+    left: 0;
+    font-size: 14px;
+}
+
+.submit .btn-fill {
+    background-color: #F04444 !important;
+}
+
+.submit .btn-text {
+    color: #fff;
 }
