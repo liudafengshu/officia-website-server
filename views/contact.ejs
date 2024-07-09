@@ -13,6 +13,7 @@
   <%- include('components/header'); -%>
   <main>
     <div class="liaison_head">
+      <input type="hidden" name="user" id="username" value="<%= user.username %>">
       <div class="liaison_head_left wow text-down" style="animation-delay: 2.4s;">
         <div class="liaison_head_left_p1" data-text="o1">联系我们</div>
         <p class="liaison_head_left_p2" data-text="o2">您可以直接留言我们需求或者电话/微信联系我们</p>
@@ -251,7 +252,10 @@
 
   <%- include('components/footer'); -%>
 </body>
-<script src="js/contact.js" defer></script>
+
+<script>
+</script>
+<script src="/js/contact.js" defer></script>
 
 
 </html>

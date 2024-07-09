@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { StaticFile, New } = require("../model/index");
+const { StaticFile, New, User } = require("../model/index");
 const fs = require("fs");
 const { promisify } = require("util");
 const { getCurrentTime, getfilesize } = require("../util");
@@ -15,7 +15,8 @@ const images = require("images");
 
 exports.postemail = async (req, res) => {
   try {
-    const { labels, content, list } = req.body;
+    const { labels, content, list, username } = req.body;
+    const user = User.findOne(username);
     console.log(labels, content, list);
     var transport = nodemailer.createTransport(
       "smtps://fortunatt_gw88%40163.com:RJLLEJAIEVGGWXJQ@smtp.163.com"
@@ -27,7 +28,7 @@ exports.postemail = async (req, res) => {
     });
     var mailOptions = {
       from: "fortunatt_gw88@163.com", //发件人
-      to: "georgiafab2369@gmail.com", //收件人，可以设置多个
+      to: user.email, //收件人，可以设置多个
       subject: `联系我们<${getCurrentTime().curTime}>`, //邮件主题
       html,
     };

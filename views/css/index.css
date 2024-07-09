@@ -556,7 +556,8 @@ body .main-wrapper {
 }
 
 .section5 .allItems .item .icon {
-    height: 130rem;
+    height: 100px;
+    width: 100px;
     display: flex
 }
 
@@ -600,6 +601,26 @@ body .main-wrapper {
     padding-bottom: 0;
     width: 100%;
     will-change: transform;
+}
+
+@media screen and (max-width: 1266px) {
+    .section5 .allItems .item {
+        padding: 30px 10%;
+    }
+
+    .section5 .allItems .item .dt {
+        font-size: 20px;
+    }
+
+    .section5 .allItems .item .dt2 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .section5 .allItems .item .des {
+        font-size: 14px;
+    }
+
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,94 +1,11 @@
-// var swiper = new Swiper(".section2 .swiper-container", {
-//   speed: 1000,
-//   init: true,
-//   initialSlide: 1,
-//   loop: false,
-//   slidesPerView: 3,
-//   centeredSlides: true,
-//   autoplay: false,
-//   mousewheel: true,
-//   spaceBetween: 40,
-//   mousewheel: {
-//     eventsTarged: ".section2 .swiper-container",
-//   },
-//   on: {
-//     init: function () {
-//       $(".section2 .swiper-progress-bar").removeClass("animate");
-//       $(".section2 .swiper-progress-bar").removeClass("active");
-//       $(".section2 .swiper-progress-bar").eq(0).addClass("animate");
-//       $(".section2 .swiper-progress-bar").eq(0).addClass("active");
-//       var firstElem = document.getElementById("home-lottie-icon01");
-//       var firstAnim = bodymovin.loadAnimation({
-//         container: firstElem,
-//         renderer: "svg",
-//         loop: false,
-//         autoplay: true,
-//         rendererSettings: {
-//           progressiveLoad: true,
-//           preserveAspectRatio: "xMidYMid meet",
-//         },
-//         path: "/static/js/home-lottie-icon01.json",
-//       });
-//       firstAnim.setSpeed(0.72);
-//     },
-//     slideChangeTransitionStart: function () {
-//       $(".section2 .swiper-progress-bar").removeClass("animate");
-//       $(".section2 .swiper-progress-bar").removeClass("active");
-//       $(".section2r .swiper-progress-bar").addClass("active");
-//     },
-//     slideChangeTransitionEnd: function () {
-//       $(".section2 .swiper-progress-bar").addClass("animate");
-//     },
-//     activeIndexChange: function () {
-//       var animations = [
-//         "home-lottie-icon01",
-//         "home-lottie-icon02",
-//         "home-lottie-icon03",
-//         "home-lottie-icon04",
-//         "home-lottie-icon05",
-//       ];
-//       var lotLen = animations.length;
-//       var elem = document.getElementById(animations[this.realIndex]);
-//       if ($(elem).children("svg").length > 0) {
-//         $(elem).children("svg").remove();
-//       }
-//       var anim = bodymovin.loadAnimation({
-//         container: elem,
-//         renderer: "svg",
-//         loop: false,
-//         autoplay: true,
-//         rendererSettings: {
-//           progressiveLoad: true,
-//           preserveAspectRatio: "xMidYMid meet",
-//         },
-//         path: "/static/js/" + animations[this.realIndex] + ".json",
-//       });
-//       anim.setSpeed(0.72);
-//     },
-//   },
-// });
-
-function createAnim(name) {
-  var anim = bodymovin.loadAnimation({
-    container: $("[data-lottie=" + name + "]")[0],
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-    rendererSettings: {
-      progressiveLoad: true,
-      preserveAspectRatio: "xMidYMid meet",
-    },
-    path: "/js/svg/" + name + ".json",
-  });
-  anim.setSpeed(0.72);
-  return anim;
-}
 var banneranim = createAnim("banner");
 setTimeout(function () {
   banneranim.play();
 }, 2300);
 
 var womananim = createAnim("woman");
+
+var absanim = createAnim("abs");
 
 $(".section1-item").hover(
   function () {
@@ -119,10 +36,17 @@ $(".section1-item").hover(
 $(window).scroll(function () {
   var scrollPosition = $(window).scrollTop();
   var womanDistance =
-    $("[data-lottie=woman]").position().top -
+    $("[data-lottie=woman]").offset().top -
     document.documentElement.clientHeight / 2;
   if (scrollPosition >= womanDistance) {
     womananim.play();
+  }
+
+  var absDistance =
+    $("[data-lottie=abs]").offset().top -
+    document.documentElement.clientHeight / 2;
+  if (scrollPosition >= absDistance) {
+    absanim.play();
   }
   var w =
     $(".section.is-manifesto").position().top -

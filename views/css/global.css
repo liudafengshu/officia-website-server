@@ -1045,6 +1045,15 @@ header {
 footer {
     background-color: #000;
     border-bottom: 10px solid #ff0000;
+    position: relative;
+}
+
+
+.footer-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    max-width: 100%;
 }
 
 .footer-logo {
@@ -1481,6 +1490,8 @@ footer {
         height: 54px;
         line-height: 54px;
     }
+
+
 
     .footer .need .l .btns a .btn-text {
         padding: 0

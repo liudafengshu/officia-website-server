@@ -46,14 +46,17 @@
       allContent[name] = content;
     });
 
-    console.log(labels, list, allContent);
-
     if (require) {
       $.ajax({
         url: "/users/api/post_email",
         type: "post",
         contentType: "application/json",
-        data: JSON.stringify({ labels, list, content: allContent }),
+        data: JSON.stringify({
+          labels,
+          list,
+          content: allContent,
+          user: $("#username").val(),
+        }),
         success: function (data) {
           if (data.code === 200) {
             alert("发送成功");

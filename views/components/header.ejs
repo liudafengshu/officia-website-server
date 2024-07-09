@@ -42,7 +42,7 @@
 <header>
     <div class="navigation">
         <nav class="top-nav container">
-            <a href="/<%= user.username %>" aria-current="page" class="home-link w-inline-block "
+            <a href="/<%= user.username %>" aria-current="page" class="home-link w-inline-block"
                 style="filter: invert(0%);">
                 <!-- <img src="uploads/logo.svg" alt=""> -->
                 <svg width="197" height="32" viewBox="0 0 197 32">
@@ -82,14 +82,14 @@
 
 
             </div>
-            <a href="/contact" class="btn-click get-scheme magnetic home-btn" style="display: none;" data-strength="25"
-                data-strength-text="15">
+            <a href="/<%= user.username %>/contact" class="btn-click get-scheme magnetic home-btn"
+                style="display: none;" data-strength="25" data-strength-text="15">
                 <div class="btn-fill"></div>
                 <span class="btn-text">
                     <span class="btn-text-inner change3">获取方案</span>
                 </span>
             </a>
-            <a href="/contact" class="btn-click get-scheme magnetic"
+            <a href="/<%= user.username %>/contact" class="btn-click get-scheme magnetic"
                 style=" background-color: #000;border: 1px solid #000; " data-strength="25" data-strength-text="15">
                 <div class="btn-fill"></div>
                 <span class="btn-text">
@@ -127,17 +127,17 @@
             <p class="p1">navigation</p>
             <div class="fixed-inner">
                 <div class="links">
-                    <a class="active " href="/">首页</a>
-                    <a class="" href="/cases">Case 案例</a>
-                    <a class="" href="/service">Service 服务</a>
-                    <a class="" href="/contact">Contact 联系</a>
-                    <a class="" href="/science.html">About 关于</a>
+                    <a class="active " href="/<%= user.username %>">首页</a>
+                    <a class="" href="/<%= user.username %>/cases">Case 案例</a>
+                    <a class="" href="/<%= user.username %>/service">Service 服务</a>
+                    <a class="" href="/<%= user.username %>/contact">Contact 联系</a>
+                    <a class="" href="/<%= user.username %>/about">About 关于</a>
                     <!-- <a href="/en">CN-EN</a> -->
                 </div>
             </div>
             <div class="flinks">
-                <p>Tel：136 6704 3458</p>
-                <p>email：Red@redesign86.com</p>
+                <p>Tel：<%= user.phone %></p>
+                <p>email：<%= user.email %></p>
 
             </div>
             <div data-w-id="7116ace3-d94f-675b-8535-f2c9c1e61c6d" class="page-transition">

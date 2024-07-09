@@ -155,3 +155,31 @@ window.addEventListener(
   },
   false
 );
+
+function createAnim(name) {
+  var anim = bodymovin.loadAnimation({
+    container: $("[data-lottie=" + name + "]")[0],
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    rendererSettings: {
+      progressiveLoad: true,
+      preserveAspectRatio: "xMidYMid meet",
+    },
+    path: "/js/svg/" + name + ".json",
+  });
+  anim.setSpeed(0.72);
+  return anim;
+}
+var lineanim = createAnim("line");
+
+$(window).scroll(function () {
+  var scrollPosition = $(window).scrollTop();
+  var lineDistance =
+    $("[data-lottie=line]").offset().top -
+    document.documentElement.clientHeight;
+
+  if (scrollPosition >= lineDistance) {
+    lineanim.play();
+  }
+});
