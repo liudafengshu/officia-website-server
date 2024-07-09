@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+
 .section1 h1 {
     font-size: 72rem;
     margin-bottom: 30rem;
@@ -35,6 +36,14 @@
     font-size: 14rem;
 }
 
+.content p {
+    width: 100%;
+}
+
+.content img {
+    width: 100%;
+}
+
 .btn-click.project-info {
     border: 1rem solid #000;
     color: #000;
@@ -51,4 +60,143 @@
 .btn-click.project-info .btn-text {
     font-size: 18rem;
     color: #000;
+}
+
+.section4 {
+    width: 100%;
+    text-align: center;
+    margin: 4vw 0
+}
+
+.section4 .medium .flex-col {
+    justify-content: center
+}
+
+.section4 .medium .flex-col p {
+    color: #000;
+    font-size: .9vw
+}
+
+.section4 .medium .flex-col h2 {
+    color: #000;
+    font-size: 2.5vw;
+    font-weight: 600;
+    margin: 3vw 0;
+    transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1)
+}
+
+.section4 .medium .tile-image-wrap {
+    width: calc(clamp(40em, 27.5vw, 25em) * .9);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    background: transparent;
+    transform: translateX(-50%);
+    overflow: hidden
+}
+
+.section4 .medium .tile-image-wrap:hover .tile-image {
+    transform: translateY(0)
+}
+
+.section4 .medium .tile-image-wrap::before {
+    display: block;
+    content: "";
+    padding-bottom: 50%
+}
+
+.section4 .medium .tile-image-wrap .tile-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(24%);
+    transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1)
+}
+
+.section4 .medium .tile-image-wrap .tile-image::before {
+    content: "";
+    display: block;
+    padding-bottom: 85%
+}
+
+.section4 .medium .tile-image-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #b1a994;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 25, 0, 1);
+    background-image: url("../images/thumbnail-atypikal.jpg")
+}
+
+.section4 .medium .stripe {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #000
+}
+
+.section4 .medium .btn-click {
+    width: 20vw;
+    border: 1px solid #000;
+    background: transparent;
+    display: block;
+    text-align: center;
+    color: #000;
+    font-size: 1vw;
+    transition: all 600ms;
+    border-radius: 0;
+    height: auto;
+    padding: 1.2vw 0
+}
+
+.medium {
+    display: flex;
+    flex-direction: column;
+    padding-left: calc(var(--container-padding) * 2);
+    padding-right: calc(var(--container-padding) * 2);
+    max-width: 100em;
+    margin: 0 auto;
+}
+
+.medium .row:nth-child(1) {
+    padding-bottom: calc(var(--section-padding) / 0.8);
+}
+
+.medium .row:nth-child(2) .btn-fixed {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.medium .row:nth-child(2) .btn-fixed .btn {
+    will-change: transform;
+}
+
+.medium .row:nth-child(2) {
+    padding-bottom: calc(var(--section-padding) * .3);
+}
+
+.medium .row:nth-child(3) .flex-col {
+    display: flex;
+    flex-direction: row;
+}
+
+.medium .row:nth-child(3) .flex-col .btn {
+    display: inline-flex;
+    margin-right: 0.5em;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 40px;
+    }
 }

@@ -42,38 +42,39 @@
 <header>
     <div class="navigation">
         <nav class="top-nav container">
-            <a href="/" aria-current="page" class="home-link w-inline-block " style="filter: invert(0%);">
+            <a href="/<%= user.username %>" aria-current="page" class="home-link w-inline-block "
+                style="filter: invert(0%);">
                 <!-- <img src="uploads/logo.svg" alt=""> -->
                 <svg width="197" height="32" viewBox="0 0 197 32">
                     <use xlink:href="#logoIcon"></use>
                 </svg>
             </a>
             <div class="nav-links">
-                <a href="/" class="btn-click magnetic p-button top_nav-link " data-strength="20">
+                <a href="/<%= user.username %>" class="btn-click magnetic p-button top_nav-link " data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">Home 首页</span>
                     </span>
                 </a>
-                <a href="/cases" class="btn-click magnetic p-button top_nav-link " data-strength="20"
-                    data-strength-text="10" style="transform: rotate(0.001deg);">
+                <a href="/<%= user.username %>/cases" class="btn-click magnetic p-button top_nav-link "
+                    data-strength="20" data-strength-text="10" style="transform: rotate(0.001deg);">
                     <span class="btn-text">
                         <span class="btn-text-inner">Case 案例</span>
                     </span>
                 </a>
-                <a href="/service" class="btn-click magnetic p-button top_nav-link " data-strength="20"
-                    data-strength-text="10" style="transform: rotate(0.001deg);">
+                <a href="/<%= user.username %>/service" class="btn-click magnetic p-button top_nav-link "
+                    data-strength="20" data-strength-text="10" style="transform: rotate(0.001deg);">
                     <span class="btn-text">
                         <span class="btn-text-inner">Service 服务</span>
                     </span>
                 </a>
-                <a href="/contact" class="btn-click magnetic p-button top_nav-link " data-strength="20"
-                    data-strength-text="10" style="transform: rotate(0.001deg);">
+                <a href="/<%= user.username %>/contact" class="btn-click magnetic p-button top_nav-link "
+                    data-strength="20" data-strength-text="10" style="transform: rotate(0.001deg);">
                     <span class="btn-text">
                         <span class="btn-text-inner">Contact 联系</span>
                     </span>
                 </a>
-                <a href="/about" class="btn-click magnetic p-button top_nav-link " data-strength="20"
-                    data-strength-text="10" style="transform: rotate(0.001deg);">
+                <a href="/<%= user.username %>/about" class="btn-click magnetic p-button top_nav-link "
+                    data-strength="20" data-strength-text="10" style="transform: rotate(0.001deg);">
                     <span class="btn-text">
                         <span class="btn-text-inner">About 关于</span>
                     </span>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="css/service.css" />
+  <%- include('components/meta', { head: meta.service }); %>
+  <link rel="stylesheet" href="/css/service.css" />
   <!-- <link rel="stylesheet" href="css/service.media.css" /> -->
 </head>
 
@@ -19,11 +19,11 @@
 
             <div class="left_text wow text-down" style="animation-delay: 2.4s;">
               <h2>
-                <p class="left_text_first">量身订制</p><br />
-                适合您品牌的网站
+                <p class="left_text_first" data-text="s1"><%= s1 %></p><br />
+                <i data-text="s2"><%= s2 %></i>
               </h2>
-              <span>
-                通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。
+              <span data-text="s3">
+                <%= s3 %>
               </span>
             </div>
             <div class=" AboutRedesignBx wow text-down" style="animation-delay: 2.6s;">
@@ -65,45 +65,46 @@
       <div class="hover_line hover_line_1 wow text-down">
         <div class="left_text">
           <div class="left_text_block">
-            <h3>品牌生态视觉策略</h3>
-            <span>透过深入了解客户需求和目标，帮助客户的品牌提升价值</span>
+            <h3 data-text="s4"><%= s4 %></h3>
+            <span data-text="s5"><%= s5 %></span>
             <div class="button">
-              <span>品牌核心</span>
-              <span>独特价值</span>
+              <span data-text="s6"><%= s6 %></span>
+              <span data-text="s7"><%= s7 %></span>
             </div>
           </div>
           <div class="left_text_block">
-            <h4>科学方法论</h4>
-            <span>进化论 —— 回归品牌本质价值<br />
-              独特价值 —— 挖掘并赋予品牌完整体系的独特价值</span>
+            <h4 data-text="s8"><%= s8 %></h4>
+            <span>
+              <i data-text="s9"><%= s9 %></i><br />
+              <i data-text="s10"><%= s10 %></i></span>
           </div>
         </div>
         <div class="hover_img">
-          <img width="100%" src="/uploads/service/banner1.jpg" alt="科学方法论" />
+          <img width="100%" data-text="s21" src="<%= s21 %>" alt="<%= s4 %>" />
         </div>
       </div>
       <div class="hover_line hover_line_2 wow text-down">
         <div class="left_text">
           <div class="left_text_block">
-            <h3>网站设计、软件系统开发</h3>
-            <span>透过深入了解客户需求和目标，帮助客户的品牌提升价值</span>
+            <h3 data-text="s11"><%= s11 %></h3>
+            <span data-text="s12"><%= s12 %></span>
             <div class="button">
-              <span>黄金15秒</span>
-              <span>独特价值</span>
-              <span>巅峰体验</span>
+              <span data-text="s13"><%= s13 %></span>
+              <span data-text="s14"><%= s14 %></span>
+              <span data-text="s15"><%= s15 %></span>
             </div>
           </div>
           <div class="left_text_block">
-            <h4>科学方法论</h4>
+            <h4 data-text="s16"><%= s16 %></h4>
             <span>
-              黄金15秒 —— 打造用户落地最短路径<br />
-              极简逻辑 —— 易拓展、易迭代、易操作<br />
-              巅峰体验 —— 深刻用户品牌高光记忆<br />
+              <i data-text="s17"> <%= s17 %></i><br />
+              <i data-text="s18"><%= s18 %></i><br />
+              <i data-text="s19"><%= s19 %></i><br />
             </span>
           </div>
         </div>
         <div class="hover_img">
-          <img width="100%" src="/uploads/service/banner2.jpg" alt="科学方法论" />
+          <img data-text="s20" width="100%" src="<%= s20 %>" alt="<%= s11 %>" />
         </div>
       </div>
     </div>

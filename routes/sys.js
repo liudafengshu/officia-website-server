@@ -9,7 +9,13 @@ const { verifyToken } = require("../util/jwt");
 router
   .post("/login", sysController.login)
   .post("/registers", sysController.register)
+  .get("/get_userlist", sysController.userslist)
+  .post("/del_user", sysController.delUser)
+  .post("/edit_user", sysController.editUser)
+  .post("/edit_content", sysController.editContent)
+  .get("/get_userdetail", verifyToken(false), sysController.getUserDetail)
   .post("/add_counter", verifyToken(false), productController.addCounter)
+
   // 新闻
   .get("/get_newlist", verifyToken(false), sysController.newlist)
   .get("/get_newdetail", verifyToken(false), sysController.newDetail)
@@ -39,6 +45,9 @@ router
   // 公司信息
   .post("/edit_company", verifyToken(), sysController.editCompany)
   .get("/get_company_detail", verifyToken(false), sysController.companyDetail)
+  // 网站meta
+  .post("/edit_meta", verifyToken(), sysController.editMeta)
+  .get("/get_meta", verifyToken(false), sysController.metaDetail)
   // banner管理
   // .post("/edit_banner", verifyToken(), sysController.editBanner)
   // .get("/get_banner_list", verifyToken(false), sysController.bannerList);

@@ -1,26 +1,26 @@
-<div class="footer  wow text-down">
+<div class="footer ">
 
-    <div class="need">
+    <div class="need wow text-down" style="animation-delay: 0.4s;">
         <p class="line-word">
-            不妨多一个“<span>美学</span>”选择
+            <i data-text="f1"><%= f1 %></i><span data-text="f2"><%= f2 %></span><i data-text="f3"><%= f3%></i>
         </p>
         <div class="l">
             <div class="t1">
-                I Need To <br>
-                <span>Consult</span>
+                <i data-text="f4"><%= f4 %> </i><br>
+                <span data-text="f5"><%= f5 %></span>
             </div>
             <div class="btns">
-                <a class="btn-click magnetic" href="mailto:Red@redesign86.com" data-strength="25"
+                <a class="btn-click magnetic" href="mailto:<%= user.email %>" data-strength="25"
                     data-strength-text="15">
                     <div class="btn-fill"></div>
                     <span class="btn-text">
-                        <span class="btn-text-inner change">Red@redesign86.com</span>
+                        <span class="btn-text-inner change"><%= user.email %></span>
                     </span>
                 </a>
                 <a target="_blank" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                     <div class="btn-fill"></div>
-                    <span class="btn-text">
-                        <span class="btn-text-inner change">13667043458</span>
+                    <span class="btn-text" style="padding: 0;">
+                        <span class="btn-text-inner change"><%= user.phone %></span>
                     </span>
                 </a>
             </div>
@@ -47,7 +47,7 @@
     <!--    滚动条效果-->
 
 </div>
-<footer>
+<footer class=" wow text-down" style="animation-delay: 0.4s;">
     <div class="container">
         <div class="footer-top">
             <a href="/" aria-current="page" class="footer-logo">
@@ -55,58 +55,57 @@
                     <use xlink:href="#logoIcon"></use>
                 </svg>
             </a>
-            <p class="footer-desc">红设视觉，专注企业网站策划、设计、制作与系统开发服务，秉承“美学”品牌理念，探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，塑造企业非凡的企业网站形象。
+            <p class="footer-desc" data-text="f8">
+                <%= f8 %>
             </p>
 
             <div class="footer-nav">
-                <a href="/" class="btn-click magnetic p-button top_nav-link" data-strength="20">
+                <a href="/<%= user.username %>" class="btn-click magnetic p-button top_nav-link" data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">Home 首页</span>
                     </span>
                 </a>
-                <a href="/service.html" class="btn-click magnetic p-button" data-strength="20">
+                <a href="/<%= user.username %>/cases" class="btn-click magnetic p-button" data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">Case 案例</span>
                     </span>
                 </a>
-                <a href="/cases.html" class="btn-click magnetic p-button " data-strength="20">
+                <a href="/<%= user.username %>/service" class="btn-click magnetic p-button " data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">Service 服务</span>
                     </span>
                 </a>
-                <a href="/about.html" class="btn-click magnetic p-button " data-strength="20">
+                <a href="/<%= user.username %>/contact" class="btn-click magnetic p-button " data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">Contact 联系</span>
                     </span>
                 </a>
-                <a href="/science.html" class="btn-click magnetic p-button " data-strength="20">
+                <a href="/<%= user.username %>/about" class="btn-click magnetic p-button " data-strength="20">
                     <span class="btn-text">
                         <span class="btn-text-inner">About 关于</span>
                     </span>
                 </a>
             </div>
             <div class="footer-contact">
-                <p class="footer-p">商务合作</p>
-                <p class="footer-tel">136 6704 3458</p>
-                <!-- <img src="" alt=""> -->
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="120" height="120" fill="white" />
-                </svg>
+                <p class="footer-p" data-text="f9"><%= f9 %></p>
+                <p class="footer-tel"><%= user.phone %></p>
+                <img src="<%= user.qrcodeImg %>" alt="<%= user.username %>">
+
 
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-bot-left">
-                Copyright @ <span class="current-year"></span> Redesign Technology Co., LTD. All Rights Reserved.
+                <i data-text="f11"><%= f11 %></i> <span class="current-year"></span> <i data-text="f10"><%= f10 %></i>
             </div>
 
             <div class="footer-bot-right">
                 <p>
-                    <img src="uploads/footer-policy.png" alt="policy">
-                    粤公网安备:440304020000000号</p>
+                    <img src="/uploads/footer-policy.png" alt="policy">
+                    <span data-text="f12"><%= f12 %></span></p>
                 <p>
-                    <img src="uploads/footer-icp.png" alt="icp">
-                    粤ICP备10056793号</p>
+                    <img src="/uploads/footer-icp.png" alt="icp">
+                    <span data-text="f13"><%= f13 %></span></p>
             </div>
         </div>
     </div>
@@ -120,6 +119,7 @@
 <!-- <script src="/js/swiper-bundle.min.js"></script> -->
 <script src="/js/magnet.js" defer></script>
 <script src="/js/wow.min.js"></script>
+<script src="/js/lottie_svg.min.js" defer></script>
 
 <script>
     // Get Current Year to Footer

@@ -12,6 +12,8 @@
 .banner .container {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
 .banner-text {
@@ -19,6 +21,14 @@
     font-size: 12rem;
     line-height: 16.8rem;
     width: 522rem;
+}
+
+.banner-img {
+    width: 714rem;
+}
+
+.banner-text svg {
+    margin-bottom: 16.8px;
 }
 
 .banner-text .text-en {
@@ -78,6 +88,24 @@
 
 .section1-img {
     height: 207rem;
+    width: 207rem;
+    position: relative;
+}
+
+.section1-img img {
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.2; */
+}
+
+.section1-img .main-bg-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: 1
 }
 
 .section1-item::before {
@@ -170,10 +198,7 @@
 }
 
 .section2-img {
-    width: 100rem;
-    height: 100rem;
-    background-color: #FF0000;
-    margin-left: 50rem;
+    margin-left: -50rem;
 }
 
 
@@ -626,6 +651,12 @@ body .main-wrapper {
 @media screen and (max-width: 860px) {
     .banner {
         padding-left: 0;
+    }
+
+
+    .banner-img {
+        width: 90%;
+        margin-top: 40px;
     }
 
     .banner .container {

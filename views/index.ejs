@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title><%= title %></title>
+  <%- include('components/meta', { head: meta.home }); %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/css/index.css' />
 </head>
@@ -14,11 +14,26 @@
     <div class="banner">
       <div class="container">
         <div class="banner-text wow text-down" style="animation-delay: 2.4s;">
-          <p>红设视觉，专注企业网站策划、设计、制作与系统开发服务，秉承“美学”品牌理念，探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，塑造企业非凡的企业网站形象。</p>
+          <svg width="87" height="8" viewBox="0 0 87 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35.2852 0H0V7.20184H35.2852V0Z" fill="white" />
+            <path d="M58.4991 0H44.9482V7.20184H58.4991V0Z" fill="url(#paint0_linear_3760_18423)" />
+            <path d="M73.4445 0H63.8281V7.20184H73.4445V0Z" fill="white" />
+            <path d="M86.9996 0H82.1914V7.20184H86.9996V0Z" fill="white" />
+            <defs>
+              <linearGradient id="paint0_linear_3760_18423" x1="44.9484" y1="3.60034" x2="58.499" y2="3.60034"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="1.3e-07" stop-color="#FFA12E" />
+                <stop offset="0.54" stop-color="#CA2E2A" />
+                <stop offset="1" stop-color="#CF217B" />
+              </linearGradient>
+            </defs>
+          </svg>
 
-          <p class="text-en">Helping Global Innovative Enterprises Provide digital brand services with aesthetic vision
+          <p data-text="k1"><%= k1 %></p>
+
+          <p class="text-en" data-text="k2"><%= k2 %>
           </p>
-          <h1>塑造美学网站倡导者</h1>
+          <h1 data-text="k3"><%= k3 %></h1>
           <a href="/contact.html" class="btn-click project-consult magnetic" data-strength="25" data-strength-text="15">
             <div class="btn-fill"></div>
             <span class="btn-text">
@@ -26,38 +41,52 @@
             </span>
           </a>
         </div>
-        <div class="banner-img"></div>
+        <div class="banner-img">
+          <!-- <img src="/uploads/index_banner.png" alt="index_banner"> -->
+          <div class="main-bg-box">
+            <div class="home-lottie-icon" data-lottie="banner"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="section section1 container wow text-down">
-      <div class="section1-item">
+    <div class="section section1 container">
+      <div class="section1-item wow text-down" style="animation-delay: 0.2s;">
         <div class="section1-img">
-          <img src="/images/index/section1-1.jpg" alt="section1-1" />
+          <img src="/uploads/icon1.svg" alt="section1-1" />
+          <div class="main-bg-box">
+            <div class="home-lottie-icon" data-lottie="design"></div>
+          </div>
         </div>
-        <h4>美学视觉重构策略</h4>
+        <h4 data-text="k4"><%= k4 %></h4>
         <div class="tags">
-          <span>品牌核心识别</span>
-          <span>统一视觉生态</span>
+          <span data-text="k5"><%= k5 %></span>
+          <span data-text="k6"><%= k6 %></span>
         </div>
       </div>
-      <div class="section1-item">
+      <div class="section1-item  wow text-down" style="animation-delay: 0.4s;">
         <div class="section1-img">
-          <img src="/images/index/section1-1.jpg" alt="section1-1" />
+          <img src="/uploads/icon2.svg" alt="section1-1" />
+          <div class="main-bg-box">
+            <div class="home-lottie-icon" data-lottie="web"></div>
+          </div>
         </div>
-        <h4>美学视觉重构策略</h4>
+        <h4 data-text="k7"><%= k7 %></h4>
         <div class="tags">
-          <span>品牌核心识别</span>
-          <span>统一视觉生态</span>
+          <span data-text="k8"><%= k8 %></span>
+          <span data-text="k9"><%= k9 %></span>
         </div>
       </div>
-      <div class="section1-item">
+      <div class="section1-item wow text-down" style="animation-delay: 0.6s;">
         <div class="section1-img">
-          <img src="/images/index/section1-1.jpg" alt="section1-1" />
+          <img src="/uploads/icon3.svg" alt="section1-1" />
+          <div class="main-bg-box">
+            <div class="home-lottie-icon" data-lottie="app"></div>
+          </div>
         </div>
-        <h4>美学视觉重构策略</h4>
+        <h4 data-text="k10"><%= k10 %></h4>
         <div class="tags">
-          <span>品牌核心识别</span>
-          <span>统一视觉生态</span>
+          <span data-text="k11"><%= k11 %></span>
+          <span data-text="k12"><%= k12 %></span>
         </div>
       </div>
     </div>
@@ -65,10 +94,10 @@
     <div class=" section section2 container wow text-down">
       <div class="content">
         <div class="section2-text">
-          <p class="ours">OUR CUSTOMER</p>
-          <h2>如何用美学视觉策略<br />
-            重塑企业的<br />
-            品牌核心调性</h2>
+          <p class="ours" data-text="k13"><%= k13 %></p>
+          <h2><span data-text="k14"><%= k14 %></span><br />
+            <span data-text="k15"><%= k15 %></span><br />
+            <span data-text="k16"><%= k16 %></span></h2>
 
           <a href="/contact.html" class="btn-click research-dircetion magnetic">
             <div class="btn-fill"></div>
@@ -79,11 +108,16 @@
         </div>
 
 
-        <div class="section section2-img"></div>
+        <div class="section section2-img">
+          <!-- <img src="/uploads/icon4.svg" alt="section1-1" /> -->
+          <div class="main-bg-box">
+            <div class="home-lottie-icon" data-lottie="woman"></div>
+          </div>
+        </div>
       </div>
     </div>
     <section class="section section3 container wow text-down">
-      <div class="l">Take A Look<br> At Service</div>
+      <div class="l"><span data-text="k17"><%= k17 %></span><br> <span data-text="k18"><%= k18 %></span></div>
       <div class="btn btn-round circle">
         <a class="btn-click magnetic " data-strength="100" data-strength-text="50">
           <div class="btn-fill"></div>
@@ -101,73 +135,31 @@
         </a>
       </div>
       <div class="r">
-        We Can <br> Do For You
+        <span data-text="k101">We Can</span> <br> <span data-text="k102">Do For You</span>
       </div>
     </section>
 
     <section class="section section4 case">
       <div class="cases container">
-        <a href="/caseInfo/9.html" class="wow text-down hover-rotate-container">
+        <% for(var i=0;i<caselist.length;i++){%>
+
+        <a href="/<%= user.username %>/case-detail/<%=caselist[i].enTitle%>"
+          class="wow text-down hover-rotate-container">
           <div class="pic company-card w-inline-block hover-rotate-inner">
-            <img src="uploads/case-img.jpg" alt="">
+            <img src="<%=caselist[i].case_image%>" alt="<%=caselist[i].case_name%>">
           </div>
           <div class="text">
-            <p class="p1">华为</p>
+            <p class="p1"><%=caselist[i].case_name%></p>
             <div class="des">
-              极简慕枫与华为携手合作，共同打造了一个引领科技潮流的品牌官网。这个官网不仅汇聚了华为最前沿的技术资讯和创新产品，更通过极简慕枫的专业网站设计，为用户带来流畅、直观、极致的浏览体验。在这里，用户能够深入了解华为的科技创新实力，感受其智慧生活的魅力。同时，这个官网也成为了华为品牌展示、产品推广、互动交流的重要平台，为华为与用户之间建立了更加紧密的联系。
+              <%=caselist[i].case_desc%>
             </div>
             <div class="tag">
-              <p>集团官网建设</p>
-              <p>视觉设计</p>
+              <p><%=caselist[i].classfiy_id1.classfiy_name%></p>
+              <p><%=caselist[i].classfiy_id2.classfiy_name%></p>
             </div>
           </div>
         </a>
-        <a href="/caseInfo/12.html" class="wow text-down hover-rotate-container">
-          <div class="pic company-card w-inline-block hover-rotate-inner">
-            <img src="uploads/case-img.jpg" alt="">
-          </div>
-          <div class="text">
-            <p class="p1">迪卡侬Perfly独立站</p>
-            <div class="des">
-              极简慕枫与全球知名体育用品零售巨头迪卡侬（Perfly）达成战略合作，共同打造了一个集运动、时尚与科技于一体的全新线上购物平台。这一平台不仅展现了迪卡侬在运动装备领域的专业与多元，更通过极简慕枫的精湛技艺，为用户带来了一种直观、流畅且极富吸引力的购物体验。同时，这个线上平台还注重用户体验，通过极简的设计风格、直观的导航以及高效的购物流程，确保用户能够享受到便捷、舒适的购物体验。这一合作不仅提升了迪卡侬品牌的在线影响力，也为运动爱好者提供了一个集购物、学习与交流于一体的综合性平台。
-            </div>
-            <div class="tag">
-              <p>品牌独立站建设</p>
-              <p>视觉设计</p>
-            </div>
-          </div>
-        </a>
-        <a href="/caseInfo/15.html" class="wow text-down hover-rotate-container">
-          <div class="pic company-card w-inline-block hover-rotate-inner">
-            <img src="/uploads/case-img.jpg" alt="">
-          </div>
-          <div class="text">
-            <p class="p1">极简慕枫品牌官网——2.0</p>
-            <div class="des">
-              极简慕枫，专注于品牌视觉生态设计，秉承“极简”品牌理念，探索极简策略、极简视觉、极简传达的品牌视觉生态营销模式，研究品牌官网到品牌全案视觉生态的全方位品牌数字化设计。在信息爆炸的时代，我们如何用最简单最直接的方法将信息最有效地传达给我们客户是我们的研究方向。
-            </div>
-            <div class="tag">
-              <p>品牌官网建设</p>
-              <p>视觉设计</p>
-              <p>品牌迭代升级</p>
-            </div>
-          </div>
-        </a>
-        <a href="/caseInfo/13.html" class="wow text-down hover-rotate-container">
-          <div class="pic company-card w-inline-block hover-rotate-inner">
-            <img src="/uploads/case-img.jpg" alt="">
-          </div>
-          <div class="text">
-            <p class="p1">舜宇智能光学</p>
-            <div class="des">
-              极简慕枫与舜宇智能光学携手合作，共同打造了一个兼具科技感与艺术美感的品牌官网。这一官网不仅展现了舜宇智能光学在光学科技领域的领先地位，更通过极简慕枫的精湛技艺，为用户带来了一种极具吸引力的视觉盛宴。极简慕枫凭借其深厚的网站建设经验，将舜宇智能光学的创新科技、高品质产品以及独特的设计理念完美融合。官网设计简洁而不失深度，既突出了舜宇智能光学的专业性，又体现了品牌的独特魅力。用户可以通过这个官网轻松了解舜宇智能光学的最新技术成果、产品线以及应用案例，同时还能享受到流畅且富有创意的用户体验。
-            </div>
-            <div class="tag">
-              <p>品牌官网建设</p>
-              <p>视觉设计</p>
-            </div>
-          </div>
-        </a>
+        <% } %>
       </div>
 
       <div class="more wow text-down ">
@@ -187,50 +179,47 @@
       <div class="container is-manifesto">
         <div class="manifesto_text-wrap">
           <div class="st ours">
-            <p>ABOUT US</p>
+            <p data-text="k19"><%= k19 %></p>
           </div>
           <h3 class="is--white manifesto_heading split-lines pc">
-            <p class="manifesto_heading_title">塑造品牌美学<span style="font-weight: 200;">倡导者</span></p>
-            <p>红设视觉，是一个独特性的设计工作室</p>
-            <p>围绕“美学”核心理念，帮助企业全面策划并分析品牌展示方向</p>
-            <p>探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，</p>
+            <p class="manifesto_heading_title"><span data-text="k21"><%= k21 %></span><span style="font-weight: 200;"
+                data-text="k20"><%= k20 %></span></p>
+            <p data-text="k22"><%= k22 %></p>
+            <p data-text="k23"><%= k23 %></p>
+            <p data-text="k24"><%= k24 %></p>
 
-            <p>塑造企业非凡的企业网站形象。</p>
+            <p data-text="k25"><%= k25 %></p>
 
-            <p class="en frist-en">Redesign is a unique design studio that revolves around the core concept of
-              "aesthetics" to
-              help
-              businesses</p>
-            <p class="en">comprehensively plan and analyze their brand presentation direction. We explore marketing
-              strategies,</p>
-            <p class="en">aesthetic visuals, and convey brand aesthetic visual ecological marketing models to shape
-              extraordinary
+            <p data-text="k26" class="en frist-en"><%= k26 %></p>
+            <p data-text="k27" class="en"><%= k27 %></p>
+            <p data-text="k28" class="en"><%= k28 %>
             </p>
-            <p class="en">corporate website images for businesses.</p>
+            <p data-text="k29" class="en"><%= k29 %></p>
           </h3>
 
           <h3 class="is--white manifesto_heading split-lines mobile">
-            <p class="manifesto_heading_title">塑造品牌美学<span style="font-weight: 200;">倡导者</span></p>
-            <p>红设视觉，是一个独特性的设计工作室</p>
-            <p>围绕“美学”核心理念，</p>
-            <p>帮助企业全面策划并分析品牌展示方向</p>
-            <p>探索营销策略、美学视觉、</p>
-            <p>传达品牌美学视觉生态营销模式，</p>
+            <p class="manifesto_heading_title"><span data-text="k21"><%= k21 %></span><span style="font-weight: 200;"
+                data-text="k20"><%= k20 %></span></p>
+            <p data-text="k31">红设视觉，是一个独特性的设计工作室</p>
+            <p data-text="k30">围绕“美学”核心理念，</p>
+            <p data-text="k32">帮助企业全面策划并分析品牌展示方向</p>
+            <p data-text="k33">探索营销策略、美学视觉、</p>
+            <p data-text="k34">传达品牌美学视觉生态营销模式，</p>
 
-            <p>塑造企业非凡的企业网站形象。</p>
+            <p data-text="k35">塑造企业非凡的企业网站形象。</p>
 
-            <p class="en frist-en">Redesign is a unique design studio that revolves around</p>
-            <p class="en"> the core concept of "aesthetics" to helpbu sinesses</p>
-            <p class="en">comprehensively plan and analyze their brand p</p>
-            <p class="en">
+            <p data-text="k36" class="en frist-en">Redesign is a unique design studio that revolves around</p>
+            <p data-text="k37" class="en"> the core concept of "aesthetics" to helpbu sinesses</p>
+            <p data-text="k38" class="en">comprehensively plan and analyze their brand p</p>
+            <p data-text="k39" class="en">
               resentation direction. We explore marketingstrategies,
             </p>
-            <p class="en">aesthetic visuals, and convey brand aesthetic
+            <p data-text="k40" class="en">aesthetic visuals, and convey brand aesthetic
             </p>
-            <p class="en">
+            <p data-text="k41" class="en">
               visual ecological marketing models to shapeextraordinary
             </p>
-            <p class="en">corporate website images for businesses.</p>
+            <p data-text="k42" class="en">corporate website images for businesses.</p>
           </h3>
         </div>
 
@@ -247,7 +236,7 @@
         <p class="p2">大道至简，简中求极，是谓“极简”</p>
       </div> -->
       <div class="allItems">
-        <div class="item wow text-down active">
+        <div class="item wow text-down active" style="animation-delay: 0.4s;">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="121" height="125" viewBox="0 0 121 125" fill="none">
               <mask id="path-1-inside-1_818_2202" fill="white">
@@ -266,17 +255,18 @@
               <circle cx="108.5" cy="112.5" r="12" fill="white" stroke="black" />
             </svg>
           </div>
-          <div class="dt">美学塑造</div>
+          <div class="dt" data-text="k43"><%= k43 %></div>
 
-          <div class="dt2"><span>塑造</span>用户对品牌<span>第一印象</span></div>
+          <div class="dt2"><span data-text="k44"><%= k44 %></span><i data-text="k46"><%= k46 %></i><span
+              data-text="k45"><%= k45 %></span>
+          </div>
           <div class="des">
-            <p><span
-                style="white-space-collapse: preserve;">通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。</span>
+            <p><span style="white-space-collapse: preserve;" data-text="k47"><%= k47 %></span>
             </p>
             <div>&nbsp;</div>
           </div>
         </div>
-        <div class="item wow text-down">
+        <div class="item wow text-down" style="animation-delay: 0.6s;">
           <div class="icon">
             <svg width="134" height="150" viewBox="0 0 134 150" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M23.4629 116.369L66.4297 19.1065L109.396 116.369H23.4629Z" fill="white" fill-opacity="0.35"
@@ -290,12 +280,12 @@
               <circle cx="66.5" cy="12.5" r="12" fill="white" stroke="black" />
             </svg>
           </div>
-          <div class="dt">深刻印象</div>
+          <div class="dt" data-text="k48"><%= k48 %></div>
 
-          <div class="dt2"><span>深刻</span>用户对品牌<span>第一印象</span></div>
+          <div class="dt2"><span data-text="k49"><%= k49 %></span><span data-text="k50"><%= k50 %></span><span
+              data-text="k51"><%= k51 %></span></div>
           <div class="des">
-            <p><span
-                style="white-space-collapse: preserve;">通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。</span>
+            <p><span style="white-space-collapse: preserve;" data-text="k52"><%= k52 %></span>
             </p>
             <p style="text-align: justify;">&nbsp;</p>
           </div>

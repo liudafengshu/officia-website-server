@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="css/contact.css" />
-  <link rel="stylesheet" href="css/contact.media.css" />
+  <%- include('components/meta', { head: meta.contact }); %>
+  <link rel="stylesheet" href="/css/contact.css" />
+  <link rel="stylesheet" href="/css/contact.media.css" />
 </head>
 
 <body>
@@ -14,14 +14,14 @@
   <main>
     <div class="liaison_head">
       <div class="liaison_head_left wow text-down" style="animation-delay: 2.4s;">
-        <div class="liaison_head_left_p1">联系我们</div>
-        <p class="liaison_head_left_p2">您可以直接留言我们需求或者电话/微信联系我们</p>
+        <div class="liaison_head_left_p1" data-text="o1">联系我们</div>
+        <p class="liaison_head_left_p2" data-text="o2">您可以直接留言我们需求或者电话/微信联系我们</p>
       </div>
       <div class="liaison_head_right wow text-down" style="animation-delay: 2.6s;">
-        <p class="liaison_head_right_p1">商务合作</p>
-        <p class="liaison_head_right_p2">136 6704 3458</p>
+        <p class="liaison_head_right_p1" data-text="o3">商务合作</p>
+        <p class="liaison_head_right_p2"><%= user.phone %></p>
         <div class="liaison_head_right_two_dimensional_barcode">
-          <img src="" alt="二维码">
+          <img src="<%= user.qrcodeImg %>" alt="<%= user.username %>">
         </div>
       </div>
 
@@ -33,19 +33,19 @@
       <div class="button_list">
         <div class="checkbox">
           <input type="checkbox" name="needs" value="品牌生态视觉策略">
-          &nbsp;&nbsp;品牌生态视觉策略
+          &nbsp;&nbsp;<span>品牌生态视觉策略</span>
         </div>
         <div class="checkbox">
           <input type="checkbox" name="needs" value="网站设计开发">
-          &nbsp;&nbsp;网站设计开发
+          &nbsp;&nbsp;<span>网站设计开发</span>
         </div>
         <div class="checkbox">
           <input type="checkbox" name="needs" value="网站设计开发">
-          &nbsp;&nbsp;品牌视觉识别
+          &nbsp;&nbsp;<span>品牌视觉识别</span>
         </div>
         <div class="checkbox">
           <input type="checkbox" name="needs" value="软件系统开发">
-          &nbsp;&nbsp;软件系统开发
+          &nbsp;&nbsp;<span>软件系统开发</span>
         </div>
         <div class="checkbox">
           <input type="checkbox" name="needs" value="Global全球数字化营销">

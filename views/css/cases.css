@@ -168,11 +168,11 @@
 
 .section2 .cases a .text .tag p {
     display: inline-block;
-    padding: 4rem 34rem;
+    padding: 4px 34px;
     background: #000;
     color: #fff;
-    margin: 0 10rem 0 0;
-    line-height: 20rem;
+    margin: 0 10px 0 0;
+    line-height: 20px;
     font-weight: 400;
 }
 
@@ -234,6 +234,8 @@
     flex-wrap: wrap;
     gap: 10px
 }
+
+
 
 @media screen and (max-width: 1024px) {
     .banner h1 {

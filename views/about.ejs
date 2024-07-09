@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <%- include('components/meta', { head: meta.about }); %>
   <link rel="stylesheet" href="/css/about.css" />
 </head>
 
@@ -14,11 +14,11 @@
     <div class="present">
       <div class="present-top">
         <div class="present_background"></div>
-        <p class="present_principal  wow text-down" style="animation-delay: 2.4s;">
-          区别于传统互联网建站公司，我们站在品牌的高度，以策略的思维，注重细节，创造卓越视觉享受与体验的高端网站建设
+        <p class="present_principal  wow text-down" data-text="b1" style="animation-delay: 2.4s;">
+          <%= b1 %>
         </p>
         <div class="present_img wow text-down" style="animation-delay: 2.6s;">
-          <img src="/uploads/contact/c562879e23c5953602d3742811637924.png" alt="" />
+          <img data-text="b2" src="<%= b2 %>" alt="" />
           <div class="img_grayscale"></div>
         </div>
 
@@ -28,26 +28,26 @@
         <div class="detailed_introduction_quotation_mark">
           “
         </div>
-        Redesign是一个创造性的企业围绕“极简”核心理念，帮助企业全面策划并分析品牌展示方向聚焦品牌核心定位，从商业品牌官网设计出发结合品牌内容策划、视觉传达、数字营销打造完整的品牌视觉输出生态从而帮助企业聚焦品牌核心竞争力来获取成果
+        <span data-text="b3"><%= b3 %></span>
         </p>
       </div>
       <div class="companion">
-        <div class="companion_title">合作伙伴</div>
+        <div class="companion_title" data-text="b4"><%= b4 %></div>
         <div class="companion_list">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 16.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 17.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 18.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 19.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 20.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 21.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 22.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 23.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 24.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 25.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 26.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 27.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 28.png" alt="">
-          <img class="companion_item wow text-down" src="/uploads/contact/image 29.png" alt="">
+          <img class="companion_item wow text-down" data-text="b5" src="<%= b5 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b6" src="<%= b6 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b7" src="<%= b7 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b8" src="<%= b8 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b9" src="<%= b9 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b10" src="<%= b10 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b11" src="<%= b11 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b12" src="<%= b12 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b13" src="<%= b13 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b14" src="<%= b14 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b15" src="<%= b15 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b16" src="<%= b16 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b17" src="<%= b17 %>" alt="">
+          <img class="companion_item wow text-down" data-text="b18" src="<%= b18 %>" alt="">
         </div>
         <div class="companion_line"></div>
       </div>

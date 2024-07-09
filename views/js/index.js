@@ -68,30 +68,62 @@
 //   },
 // });
 
+function createAnim(name) {
+  var anim = bodymovin.loadAnimation({
+    container: $("[data-lottie=" + name + "]")[0],
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    rendererSettings: {
+      progressiveLoad: true,
+      preserveAspectRatio: "xMidYMid meet",
+    },
+    path: "/js/svg/" + name + ".json",
+  });
+  anim.setSpeed(0.72);
+  return anim;
+}
+var banneranim = createAnim("banner");
+setTimeout(function () {
+  banneranim.play();
+}, 2300);
+
+var womananim = createAnim("woman");
+
+$(".section1-item").hover(
+  function () {
+    $(this).find("img").fadeOut();
+    var elem = $(this).find(".home-lottie-icon");
+    if (elem.children("svg").length > 0) {
+      elem.children("svg").remove();
+    }
+    var anim = bodymovin.loadAnimation({
+      container: elem[0],
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      rendererSettings: {
+        progressiveLoad: true,
+        preserveAspectRatio: "xMidYMid meet",
+      },
+      path: "/js/svg/" + elem.attr("data-lottie") + ".json",
+    });
+    anim.setSpeed(0.72);
+  },
+  function () {
+    $(this).find("img").fadeIn();
+    $(this).find(".home-lottie-icon").empty();
+  }
+);
+
 $(window).scroll(function () {
   var scrollPosition = $(window).scrollTop();
-  //   var targetDom = $(".loading-svg");
-  //   var targetPosition = $(".loading-svg svg").offset().top;
-
-  //   // 判断当前DOM元素的底部是否进入窗口超过100px
-  //   if (
-  //     scrollPosition >= targetPosition - $(window).height() + 100 &&
-  //     scrollPosition < targetPosition + targetDom.outerHeight()
-  //   ) {
-  //     $(
-  //       ".animation1__draw, .animation2__draw,.animation3__draw,.animation4__draw,.animation5__draw"
-  //     ).addClass("svg-line");
-  //     $(
-  //       ".animation1__text,.animation2__text,.animation3__text,.animation4__text,.animation5__text"
-  //     ).addClass("showText");
-  //   }
-
-  //   if (scrollPosition >= $(".section2").offset().top - $(window).height()) {
-  //     swiper.autoplay.start();
-  //   }
-
-  //
-
+  var womanDistance =
+    $("[data-lottie=woman]").position().top -
+    document.documentElement.clientHeight / 2;
+  if (scrollPosition >= womanDistance) {
+    womananim.play();
+  }
   var w =
     $(".section.is-manifesto").position().top -
     document.documentElement.clientHeight / 2;

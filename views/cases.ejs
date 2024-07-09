@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cases.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/cases.css">
+    <%- include('components/meta', { head: meta.cases }); %>
 </head>
 
 <body>
@@ -42,8 +42,10 @@
         <div class="banner  wow text-down" style="animation-delay: 2.4s;">
             <div class="container flex flex-align-center">
                 <div class="banner-left">
-                    <h1>量身订制<span>适合您品牌</span>的网站</h1>
-                    <p>通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。</p>
+                    <h1><i data-text="c1"><%= c1 %></i><span data-text="c2"><%= c2 %></span><i
+                            data-text="c3"><%= c3 %></i>
+                    </h1>
+                    <p data-text="c4"><%= c4 %></p>
                 </div>
                 <svg width="772" height="160" viewBox="0 0 772 160" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#designIcon"></use>
@@ -91,7 +93,8 @@
             <div class="cases container">
                 <% for(var i=0;i<caselist.length;i++){%>
 
-                <a href="/case-detail/<%=caselist[i].enTitle%>" class="wow text-down hover-rotate-container">
+                <a href="/<%= user.username %>/case-detail/<%=caselist[i].enTitle%>"
+                    class="wow text-down hover-rotate-container">
                     <div class="pic company-card w-inline-block hover-rotate-inner">
                         <img src="<%=caselist[i].case_image%>" alt="<%=caselist[i].case_name%>">
                     </div>
@@ -123,6 +126,8 @@
 
 
         </section>
+
+
 
     </main>
     <%- include('components/footer'); -%>

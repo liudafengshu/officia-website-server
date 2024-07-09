@@ -18,12 +18,28 @@ exports.userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
+    unique: true,
   },
   password: {
     type: String,
     required: true,
     set: (value) => md5(value),
-    select: false,
+    // select: false,
+  },
+  phone: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+  },
+  qrcodeImg: {
+    type: String,
+    require: true,
+  },
+  isAdmin: {
+    type: Boolean,
   },
   ...baseModel,
 });
@@ -297,6 +313,35 @@ exports.bannerSchema = new mongoose.Schema({
   ...baseModel,
 });
 
+// banner资源表
+exports.webmetaSchema = new mongoose.Schema({
+  main: {
+    type: Number,
+    required: true,
+  },
+  home: {
+    type: Object,
+    required: true,
+  },
+  cases: {
+    type: Object,
+    required: true,
+  },
+  about: {
+    type: Object,
+    required: true,
+  },
+  service: {
+    type: Object,
+    require: true,
+  },
+  contact: {
+    type: Object,
+    require: true,
+  },
+  ...baseModel,
+});
+
 // 首页
 exports.indexSchema = new mongoose.Schema({
   main: {
@@ -324,5 +369,15 @@ exports.indexSchema = new mongoose.Schema({
     type: Array,
     required: true,
     ref: "news",
+  },
+});
+exports.contentSchema = new mongoose.Schema({
+  main: {
+    type: Number,
+    required: true,
+  },
+  content: {
+    type: Object,
+    required: true,
   },
 });

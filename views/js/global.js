@@ -123,3 +123,35 @@ $(".manifesto-circle_wrap").each(function (index) {
     }
   );
 });
+
+window.addEventListener(
+  "message",
+  (e) => {
+    if (e.origin === "http://localhost:9528") {
+      if (e.data === "edit") {
+        $(":root").addClass("edit-mode");
+        $(".edit-mode").delegate("[data-text]", "click", function (event) {
+          var target = $(event.target).closest("[data-text]");
+          target.addClass("editAct");
+          var key = target.attr("data-text");
+          var content = target.text();
+          if (event.target.tagName === "IMG") {
+            content = target.attr("src");
+          }
+          var msg = { key, content };
+          window.top.postMessage(msg, "http://localhost:9528");
+        });
+      }
+      if (e.data && e.data.type === "quit") {
+        $("[data-text]").removeClass("editAct");
+        var target = $(`[data-text=${e.data.val.key}]`);
+        if (target[0].tagName === "IMG") {
+          target.attr("src", e.data.val.content);
+        } else {
+          target.text(e.data.val.content);
+        }
+      }
+    }
+  },
+  false
+);

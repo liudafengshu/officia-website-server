@@ -27,5 +27,7 @@ module.exports = {
   Company: mongoose.model("Company", sysModel.companySchema),
   Banner: mongoose.model("Banner", sysModel.bannerSchema),
   Index: mongoose.model("Index", sysModel.indexSchema),
+  Content: mongoose.model("Content", sysModel.contentSchema),
   Counter: mongoose.model("Counter", sysModel.counterSchema),
+  Webmeta: mongoose.model("Webmeta", sysModel.webmetaSchema),
 };

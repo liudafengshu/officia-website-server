@@ -10,6 +10,21 @@ html {
         font-size: 0.13vw;
     }
 } */
+.editAct {
+    border: 1px dashed red;
+}
+
+i {
+    font-style: normal;
+}
+
+html.edit-mode [data-text] {
+    min-width: 50px
+}
+
+html.edit-mode [data-text]:hover {
+    border: 1px dashed green;
+}
 
 body {
     margin: 0;
@@ -1073,6 +1088,11 @@ footer {
     align-items: end;
 }
 
+.footer-contact img {
+    width: 120px;
+    height: 120px;
+}
+
 .footer-p {
     font-size: 18px;
     margin-bottom: 10px;
@@ -1441,6 +1461,11 @@ footer {
         margin-top: 20px;
         flex-direction: column
     }
+
+    .footer .need .l .btns .btn-text {
+        text-wrap: nowrap;
+    }
+
 
     .footer .need .l .btns a {
         font-size: 16px;

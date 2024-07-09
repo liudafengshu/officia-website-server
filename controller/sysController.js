@@ -1,7 +1,14 @@
 // const fs = require("fs");
 // const { promisify } = require("util");
-// const lodash = require('lodash')
-const { User, News, Company, Index } = require("../model/index");
+const lodash = require("lodash");
+const {
+  User,
+  News,
+  Company,
+  Index,
+  Content,
+  Webmeta,
+} = require("../model/index");
 const { createToken } = require("../util/jwt");
 const { getCurrentTime } = require("../util");
 
@@ -47,6 +54,33 @@ exports.indexList = async (req, res) => {
   }
 };
 
+// content管理
+exports.editContent = async (req, res) => {
+  try {
+    const dbBack = await Content.findOne({ main: 1 });
+    if (dbBack) {
+      await Content.updateOne(
+        { main: 1 },
+        { content: { ...dbBack.content, ...req.body.content } }
+      );
+    } else {
+      const cModel = new Content({ ...req.body, main: 1 });
+      await cModel.save();
+    }
+    res.status(200).json({
+      code: 200,
+      data: {},
+      message: "成功",
+    });
+  } catch (error) {
+    res.status(200).json({
+      code: 500,
+      data: {},
+      message: error.toString(),
+    });
+  }
+};
+
 // 公司详情
 exports.companyDetail = async (req, res) => {
   try {
@@ -72,6 +106,47 @@ exports.editCompany = async (req, res) => {
       await Company.updateOne({ main: 1 }, req.body);
     } else {
       const cModel = new Company({ ...req.body, main: 1 });
+      await cModel.save();
+    }
+    res.status(200).json({
+      code: 200,
+      data: {},
+      message: "成功",
+    });
+  } catch (error) {
+    res.status(200).json({
+      code: 500,
+      data: {},
+      message: error.toString(),
+    });
+  }
+};
+
+// 公司详情
+exports.metaDetail = async (req, res) => {
+  try {
+    const detail = await Webmeta.findOne({ main: 1 });
+    res.status(200).json({
+      code: 200,
+      data: detail,
+      message: "成功",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+      code: 500,
+    });
+  }
+};
+
+// 编辑meta
+exports.editMeta = async (req, res) => {
+  try {
+    const dbBack = await Webmeta.findOne({ main: 1 });
+    if (dbBack) {
+      await Webmeta.updateOne({ main: 1 }, req.body);
+    } else {
+      const cModel = new Webmeta({ ...req.body, main: 1 });
       await cModel.save();
     }
     res.status(200).json({
@@ -199,6 +274,41 @@ exports.addNew = async (req, res) => {
   }
 };
 
+exports.delUser = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const dbBack = await User.findByIdAndRemove(id);
+    res.json({
+      code: 200,
+      data: dbBack,
+      message: "删除成功",
+    });
+  } catch (error) {
+    res.json({
+      code: 500,
+      data: {},
+      message: error.toString(),
+    });
+  }
+};
+
+exports.getUserDetail = async (req, res) => {
+  try {
+    const { id } = req.query;
+    const detail = await User.findOne({ _id: id });
+    res.status(200).json({
+      code: 200,
+      data: detail,
+      message: "成功",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+      code: 500,
+    });
+  }
+};
+
 // 用户注册
 exports.register = async (req, res) => {
   let dbBack = await User.findOne({ username: req.body.username });
@@ -213,6 +323,86 @@ exports.register = async (req, res) => {
   await userModel.save();
   res.status(201).json({
     message: "注册成功",
+  });
+};
+
+// 用户新增编辑
+exports.editUser = async (req, res) => {
+  try {
+    const id = req.body._id;
+    const isAdmin = req.body.isAdmin;
+    let dbBack;
+
+    if (id) {
+      dbBack = await User.findById(id);
+      if (dbBack) {
+        // 如果正在更新的用户设置了 isAdmin 为 true
+        if (isAdmin) {
+          // 将之前的管理员设置为普通用户
+          await User.updateOne({ isAdmin: true }, { $set: { isAdmin: false } });
+        }
+        await User.updateOne({ _id: id }, lodash.omit(req.body, ["_id"]));
+      } else {
+        res.status(404).json({
+          code: 404,
+          message: "用户未找到！",
+        });
+        return;
+      }
+    } else {
+      dbBack = await User.findOne({ username: req.body.username });
+      if (dbBack) {
+        res.status(402).json({
+          code: 402,
+          message: "用户已注册！",
+        });
+        return;
+      }
+      // 如果新用户设置了 isAdmin 为 true
+      if (isAdmin) {
+        // 将之前的管理员设置为普通用户
+        await User.updateOne({ isAdmin: true }, { $set: { isAdmin: false } });
+      }
+      const model = new User(req.body);
+      await model.save();
+    }
+
+    res.status(200).json({
+      code: 200,
+      data: {},
+      message: "成功",
+    });
+  } catch (error) {
+    res.status(500).json({
+      code: 500,
+      data: {},
+      message: error.toString(),
+    });
+  }
+};
+
+// 用户列表
+exports.userslist = async (req, res) => {
+  const { page = 1, size = 10, keyward = "" } = req.query;
+  const str = `.*${keyward}.*`;
+  const reg = new RegExp(str);
+  const searchOpt = {
+    $or: [{ username: { $regex: reg } }, { content: { $regex: reg } }],
+  };
+  const list = await User.find(searchOpt)
+    .sort({ time: -1 })
+    .skip((page - 1) * size)
+    .limit(size);
+  const total = await User.countDocuments(searchOpt);
+  res.status(200).json({
+    code: 200,
+    data: {
+      list,
+      total,
+      page,
+      size,
+    },
+    message: "成功",
   });
 };
 
