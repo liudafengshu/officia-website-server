@@ -16,8 +16,9 @@ const images = require("images");
 exports.postemail = async (req, res) => {
   try {
     const { labels, content, list, username } = req.body;
-    const user = User.findOne(username);
-    console.log(labels, content, list);
+
+    const thisUser = await User.findOne({ username });
+
     var transport = nodemailer.createTransport(
       "smtps://fortunatt_gw88%40163.com:RJLLEJAIEVGGWXJQ@smtp.163.com"
     );
@@ -28,7 +29,7 @@ exports.postemail = async (req, res) => {
     });
     var mailOptions = {
       from: "fortunatt_gw88@163.com", //发件人
-      to: user.email, //收件人，可以设置多个
+      to: thisUser.email, //收件人，可以设置多个
       subject: `联系我们<${getCurrentTime().curTime}>`, //邮件主题
       html,
     };
@@ -46,7 +47,7 @@ exports.postemail = async (req, res) => {
         code: 200,
         message: info.response,
       });
-      console.log("Message sent: " + info.response);
+      // console.log("Message sent: " + info.response);
     });
   } catch (error) {
     res.json({

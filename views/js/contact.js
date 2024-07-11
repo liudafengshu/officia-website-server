@@ -4,6 +4,8 @@
   });
 
   $("button[type='submit']").click(function () {
+    const _this = $(this);
+    console.log(111);
     var require = true;
     var allContent = {};
     var labels = {};
@@ -47,6 +49,7 @@
     });
 
     if (require) {
+      $(this).attr("disabled", true);
       $.ajax({
         url: "/users/api/post_email",
         type: "post",
@@ -55,13 +58,18 @@
           labels,
           list,
           content: allContent,
-          user: $("#username").val(),
+          username: $("#username").val(),
         }),
         success: function (data) {
           if (data.code === 200) {
             alert("发送成功");
             location.reload();
+          } else {
+            alert(data.message);
           }
+        },
+        complete: function () {
+          _this.attr("disabled", false);
         },
       });
     }

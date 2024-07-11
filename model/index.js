@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const sysModel = require("./sysModel");
-const { mongopath } = require("../config/config.default");
+const { mongopath } = require("../config/config.product");
 
 async function mian() {
   await mongoose.connect(mongopath, {

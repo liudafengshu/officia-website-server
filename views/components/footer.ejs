@@ -27,7 +27,8 @@
         </div>
         <div class="r">
             <div class="btn btn-round circle">
-                <a class="btn-click magnetic " data-strength="100" data-strength-text="50" href="/contact.html">
+                <a class="btn-click magnetic " data-strength="100" data-strength-text="50"
+                    href="/<%= user.username %>/contact">
                     <div class="btn-fill"></div>
                     <span class="btn-text">
                         <span class="btn-text-inner change3">
@@ -61,9 +62,7 @@
                     <use xlink:href="#logoIcon"></use>
                 </svg>
             </a>
-            <p class="footer-desc" data-text="f8">
-                <%= f8 %>
-            </p>
+            <p class="footer-desc" data-text="f8"><%= f8 %></p>
 
             <div class="footer-nav">
                 <a href="/<%= user.username %>" class="btn-click magnetic p-button top_nav-link" data-strength="20">

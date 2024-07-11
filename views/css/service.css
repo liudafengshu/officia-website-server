@@ -169,7 +169,7 @@
     position: absolute;
     padding-left: 2rem;
     text-transform: uppercase;
-    left: 114%;
+    left: 123%;
     top: 57%;
     z-index: 1;
 }
@@ -177,18 +177,18 @@
 .CardText-text:after {
     content: "";
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background-color: #ff0000;
     position: absolute;
-    left: -56px;
+    left: -92px;
     z-index: 9;
-    top: calc(50% - 4px);
+    top: calc(50% - 7px);
 }
 
 .CardText-num {
-    width: 50px;
+    width: 82px;
     height: 2px;
     display: block;
     background-color: #ff0000;
@@ -204,7 +204,7 @@
 
 .CardText-title {
     display: block;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 1.2em;
     color: #000;
     font-weight: 400;
@@ -412,9 +412,54 @@
         top: 71%;
     }
 
-    .CardText-title {
-        right: 24px;
+    .CardText-text {
+        position: absolute;
+        padding-left: 2rem;
+        text-transform: uppercase;
+        left: 128%;
+        top: 57%;
+        z-index: 1;
     }
+
+    .CardText-text:after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        position: absolute;
+        left: -71px;
+        z-index: 9;
+        top: calc(50% - 4px);
+    }
+
+    .CardText-num {
+        width: 50px;
+        height: 2px;
+        display: block;
+        background-color: #ff0000;
+        position: absolute;
+        top: 50%;
+        left: -65%;
+        transform: translateY(-50%);
+    }
+
+    /* Rectangle 180 */
+
+
+
+    .CardText-title {
+        display: block;
+        font-size: 20px;
+        line-height: 1.2em;
+        color: #000;
+        font-weight: 400;
+        white-space: nowrap;
+        right: 24px;
+        font-size: 24px;
+    }
+
 
     .AboutRedesignBx {
         padding-top: 0;
@@ -434,7 +479,7 @@
     }
 
     .CardText-text {
-        left: 100%;
+        /* left: 100%; */
         /* right: -44%; */
     }
 }

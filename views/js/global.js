@@ -123,11 +123,12 @@ $(".manifesto-circle_wrap").each(function (index) {
     }
   );
 });
-
+// var adminUrl = "http://localhost:9528";
+var adminUrl = location.origin;
 window.addEventListener(
   "message",
   (e) => {
-    if (e.origin === "http://localhost:9528") {
+    if (e.origin === adminUrl) {
       if (e.data === "edit") {
         $(":root").addClass("edit-mode");
         $(".edit-mode").delegate("[data-text]", "click", function (event) {
@@ -138,8 +139,8 @@ window.addEventListener(
           if (event.target.tagName === "IMG") {
             content = target.attr("src");
           }
-          var msg = { key, content };
-          window.top.postMessage(msg, "http://localhost:9528");
+          var msg = { key, content, type: "webtextedit" };
+          window.top.postMessage(msg, adminUrl);
         });
       }
       if (e.data && e.data.type === "quit") {

@@ -15,11 +15,11 @@
     <div class="liaison_head">
       <input type="hidden" name="user" id="username" value="<%= user.username %>">
       <div class="liaison_head_left wow text-down" style="animation-delay: 2.4s;">
-        <div class="liaison_head_left_p1" data-text="o1">联系我们</div>
-        <p class="liaison_head_left_p2" data-text="o2">您可以直接留言我们需求或者电话/微信联系我们</p>
+        <div class="liaison_head_left_p1" data-text="o1"><%= o1 %></div>
+        <p class="liaison_head_left_p2" data-text="o2"><%= o2 %></p>
       </div>
       <div class="liaison_head_right wow text-down" style="animation-delay: 2.6s;">
-        <p class="liaison_head_right_p1" data-text="o3">商务合作</p>
+        <p class="liaison_head_right_p1" data-text="o3"><%= o3 %></p>
         <p class="liaison_head_right_p2"><%= user.phone %></p>
         <div class="liaison_head_right_two_dimensional_barcode">
           <img src="<%= user.qrcodeImg %>" alt="<%= user.username %>">
@@ -238,7 +238,7 @@
         <div class="input-item wow text-down">
           <input placeholder="留言" type="text" name="message">
         </div>
-        <button type="submit wow text-down" class="submit last_button btn-click magnetic" data-strength="25"
+        <button type="submit" class="submit last_button btn-click magnetic  wow text-down" data-strength="25"
           data-strength-text="15">
           <div class="btn-fill"></div>
           <span class="btn-text">

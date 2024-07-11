@@ -19,7 +19,8 @@ i {
 }
 
 html.edit-mode [data-text] {
-    min-width: 50px
+    min-width: 50px;
+    white-space: pre-line;
 }
 
 html.edit-mode [data-text]:hover {

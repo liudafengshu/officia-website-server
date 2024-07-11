@@ -6,6 +6,11 @@ router
   // .get("/:username/news", (req, res) => {
   //   res.render("news.ejs", { title: 1 });
   // })
+  .get("/", async (req, res) => {
+    const cases = await viewController.indexCase();
+    const data = await viewController.content();
+    res.render("index.ejs", { ...data, caselist: cases });
+  })
   .get("/:username/cases", async (req, res) => {
     const common = await viewController.content(req.params.username);
     const data = await viewController.casesList(req.query);
@@ -35,4 +40,5 @@ router
     console.log(data);
     res.render("index.ejs", { ...data, caselist: cases });
   });
+
 module.exports = router;

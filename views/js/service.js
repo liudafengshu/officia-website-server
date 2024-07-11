@@ -144,11 +144,7 @@
         // .to(".CardText-item:first-child",{top:54+'%', duration: 5},"-=10")
         // .to(".CardText-item:last-child",{top:43+'%', duration: 5},"-=10")
         .to(".CardText-text", { opacity: 0, duration: 5 }, "-=10")
-        .to(
-          ".CardText-text.item-2",
-          { opacity: 1, left: 54 + "%", duration: 5 },
-          "-=10"
-        )
+        .to(".CardText-text.item-2", { opacity: 1, duration: 5 }, "-=10")
         .set({}, {}, "+=5")
         .to(".AboutRedesignBx-item.first", { opacity: 0, duration: 5 })
         .to(".AboutRedesignBx-item.last", { opacity: 0, duration: 5 })

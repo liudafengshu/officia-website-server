@@ -74,6 +74,7 @@ exports.content = async (username) => {
   const val = await Content.findOne({ main: 1 });
   const meta = await Webmeta.findOne({ main: 1 });
   let user;
+
   if (username) {
     user = await User.findOne({ username });
     if (!user) {
@@ -82,7 +83,7 @@ exports.content = async (username) => {
   } else {
     user = await User.findOne({ isAdmin: true });
   }
-  return { ...val.content, user, meta };
+  return { ...val?.content, user, meta };
 };
 
 exports.indexCase = async () => {
