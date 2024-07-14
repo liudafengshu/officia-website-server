@@ -34,7 +34,7 @@
                     </span>
                 </a>
             </div>
-            <div class="content">
+            <div class="content wow text-down" style="animation-delay: 2.7s;">
                 <%- data.content%>
             </div>
         </div>
@@ -83,7 +83,7 @@
     <script>
         $(function () {
             $('a.top_nav-link[href *= "/cases"]').addClass("w--current");
-            $(".content p").addClass("wow text-down")
+            $(".content img").addClass("wow text-down")
             new WOW().init();
         })
     </script>

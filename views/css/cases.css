@@ -134,7 +134,7 @@
     width: 100%;
     display: block;
     object-fit: cover;
-    max-height: 25.31vw
+    /* max-height: 25.31vw */
 }
 
 .section2 .cases a .text {
