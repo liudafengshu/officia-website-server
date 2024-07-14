@@ -60,14 +60,16 @@ exports.caseDetail = async (param) => {
     .populate("classfiy_id1")
     .populate("classfiy_id2");
   // 获取下一个案例
-  const nextCase = await Case.findOne({
-    createAt: { $gt: caseDetail.createAt },
-  })
-    .sort({ createAt: 1 })
-    .populate("classfiy_id1")
-    .populate("classfiy_id2");
+  const nextCase = caseDetail?.createAt
+    ? await Case.findOne({
+        createAt: { $gt: caseDetail.createAt },
+      })
+        .sort({ createAt: 1 })
+        .populate("classfiy_id1")
+        .populate("classfiy_id2")
+    : null;
 
-  return { data: caseDetail, nextCase: nextCase || null };
+  return { data: caseDetail, nextCase };
 };
 
 exports.content = async (username) => {

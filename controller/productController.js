@@ -121,7 +121,7 @@ exports.getCaseList = async (req, res) => {
   }
 };
 
-// 新增分类
+// 新增案例
 exports.addCase = async (req, res) => {
   try {
     const id = req.body._id;
@@ -131,7 +131,7 @@ exports.addCase = async (req, res) => {
     } else {
       const caseModel = new Case({
         ...req.body,
-        enTitle: getNextSequenceValue("caseid"),
+        enTitle: await getNextSequenceValue("caseid"),
       });
       await caseModel.save();
     }

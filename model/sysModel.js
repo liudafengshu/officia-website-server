@@ -131,11 +131,6 @@ exports.caseSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  classfiy_id: {
-    type: mongoose.ObjectId,
-    required: true,
-    ref: "Classfiy",
-  },
   classfiy_id1: {
     type: mongoose.ObjectId,
     required: true,

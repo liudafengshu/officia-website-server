@@ -153,9 +153,9 @@
                 // })
                 console.log(id)
                 if (id > 0) {
-                    window.location.href = '/cases?type=' + id
+                    window.location.href = '/<%= user.username %>/cases?type=' + id
                 } else {
-                    window.location.href = '/cases'
+                    window.location.href = '/<%= user.username %>/cases'
                 }
             })
         })
