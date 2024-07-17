@@ -9,7 +9,7 @@ var absanim = createAnim("abs");
 
 $(".section1-item").hover(
   function () {
-    $(this).find("img").fadeOut();
+    $(this).find("img").fadeOut(0.1);
     var elem = $(this).find(".home-lottie-icon");
     if (elem.children("svg").length > 0) {
       elem.children("svg").remove();
@@ -28,7 +28,7 @@ $(".section1-item").hover(
     anim.setSpeed(0.72);
   },
   function () {
-    $(this).find("img").fadeIn();
+    $(this).find("img").fadeIn(0.1);
     $(this).find(".home-lottie-icon").empty();
   }
 );

@@ -17,7 +17,7 @@ innerloader = {
           setTimeout(() => {
             $(".innerload").css("z-index", -1);
           }, 200);
-        }, 2000);
+        }, 200);
       }
     }
     a();

@@ -4,14 +4,38 @@
     width: 100%;
     color: #fff;
     display: flex;
-    align-items: center;
-
+    flex-direction: column;
+    justify-content: center;
     padding-left: 7.7vw;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    background: radial-gradient(rgba(255, 0, 0, 0.52), rgba(0, 0, 0, 0) 70%);
+    width: 400rem;
+    height: 400rem;
+    top: -380rem;
+    right: 350rem;
+    z-index: 101;
+
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(rgba(255, 0, 0, 0.52), rgba(0, 0, 0, 0) 80%);
+    width: 750rem;
+    height: 750rem;
+    bottom: -500rem;
+    right: 350rem;
+    z-index: 101;
 }
 
 .banner .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     align-items: center;
 }
@@ -73,7 +97,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 118rem 0 151rem;
+    background-color: #fff;
+    padding-top: 118rem !important;
+    padding-bottom: 151rem !important;
+    z-index: 102;
+    position: relative;
+
 }
 
 .section1-item {
@@ -302,6 +331,7 @@
     -webkit-transition: transform 0.5s;
     -moz-transition: transform 0.5s;
     -o-transition: transform 0.5s;
+    width: 100%;
 }
 
 .section4 .cases a .pic img {
@@ -323,7 +353,7 @@
 
 .section4 .cases a .text .des {
     color: #000;
-    font-size: .9vw;
+    font-size: 1.5vw;
     font-weight: 400;
     margin: 20rem 0;
     line-height: 1.6;
@@ -346,7 +376,7 @@
     padding: 4rem 34rem;
     background: #000;
     color: #fff;
-    line-height: 20rem;
+    line-height: 26rem;
     font-weight: 400;
 }
 
@@ -475,7 +505,7 @@ body .main-wrapper {
 }
 
 .is--white.manifesto_heading.split-lines .manifesto_heading_title {
-    font-size: 3vw;
+    font-size: 5vw;
     font-weight: 700;
     margin-bottom: 30rem;
 }
@@ -642,11 +672,11 @@ body .main-wrapper {
     }
 
     .section2 .ours {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .section2 h2 {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .section4 .more a {
@@ -657,7 +687,7 @@ body .main-wrapper {
     }
 
     .section4 .more a .btn-text {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .manifesto_description-wrap {
@@ -790,11 +820,11 @@ body .main-wrapper {
 
 @media screen and (max-width: 600px) {
     .is--white.manifesto_heading.split-lines p {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .is--white.manifesto_heading.split-lines .en {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .banner-text h1 {

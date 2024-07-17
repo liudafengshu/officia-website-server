@@ -2,6 +2,9 @@
   $(".checkbox").click(function () {
     this.children[0].checked = !this.children[0].checked;
   });
+  $(".checkbox input").click(function () {
+    this.checked = !this.checked;
+  });
 
   $("button[type='submit']").click(function () {
     const _this = $(this);
@@ -62,7 +65,7 @@
         }),
         success: function (data) {
           if (data.code === 200) {
-            alert("发送成功");
+            alert("发送成功，我们将在24小时内与您取得联系！");
             location.reload();
           } else {
             alert(data.message);

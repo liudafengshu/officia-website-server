@@ -1358,6 +1358,14 @@ footer {
         height: 17vw
     }
 
+    .footer-top {
+        height: 290px;
+    }
+
+    .footer-nav {
+        display: none;
+    }
+
     .footer-desc {
         /* font-size: ; */
     }
@@ -1729,7 +1737,7 @@ footer {
     }
 
     .footer-desc {
-        width: 50vw;
+        width: 100%;
         top: 70px;
     }
 
